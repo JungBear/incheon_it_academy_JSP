@@ -1,0 +1,22 @@
+.top{
+    width:80%;
+}
+
+.main-content{
+    width: 80%; 
+    float: left; 
+    height: 200px;
+}
+.my-photo{
+    float: left; 
+    width: 100px; 
+    height: 100px;
+}
+.ad{
+    width:20%;
+    float: left; 
+    height: 200px;
+}
+.ad-img{
+    height: 200px;
+}

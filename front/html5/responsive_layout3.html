@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .img-box{
+            background-image: url(./img/cat.jpg);
+            width: 50%;
+            height: 50vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .img-box{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="img-box"></div>
+
+    <div class="img-box"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function isSame(num1, num2){
+            if(num1 === num2){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        
+        console.log(isSame(2, 3));
+
+        function findSmaller(num1, num2){
+            if(num1<num2){
+                return num1 + "이(가) 더 작습니다.";
+            }else if(num1 === num2){
+                return "두 수는 같습니다.";
+            }else{
+                return num2 + "이(가) 더 작습니다.";
+            }
+        }
+
+        var result = findSmaller(4,3);
+        console.log(result);
+
+        function checkHeight(height){
+            if(height>190){
+                return "탑슬 불가";
+            }else if(height>130){
+                return "탑승 가능";
+            }else{
+                return "탑승 불가";
+            }
+        }
+
+        result = checkHeight(129);
+        console.log(result);
+        result = checkHeight(150);
+        console.log(result);
+        result = checkHeight(191);
+        console.log(result);
+        
+
+
+    </script>
+    
+</body>
+</html>

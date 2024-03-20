@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블예제</title>
+    <style>
+        body{
+            margin: o;
+        }
+
+        div.component-table{
+            background-color: plum;
+            padding: 30px;
+            width: 700px;
+            margin: auto;
+        }
+
+        .cart-table{
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid;
+        }
+        .component-table h3{
+            margin: 0;
+        }
+
+
+        .cart-table img{
+            width: 80px;
+            height: 80px;
+        }
+
+        .cart-table td{
+            text-align: center;
+            padding: 15px;
+            border-bottom: 1px solid;
+        }
+
+        .cart-table .total-td{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="component-table">
+        <h3>장바구니</h3>
+        <table class="cart-table">
+            <tr>
+                <td>이미지</td>
+                <td>상품명</td>
+                <td>수량</td>
+                <td>가격</td>
+                <td>총가격</td>
+            </tr>
+            <tr>
+                <td><img src="./img/cat.jpg" alt="..."></td>
+                <td>상품명</td>
+                <td>1</td>
+                <td>4000</td>
+                <td>4000</td>
+            </tr>
+            <tr>
+                <td><img src="./img/cat2.jpg" alt="..."></td>
+                <td>상품명</td>
+                <td>1</td>
+                <td>4000</td>
+                <td>4000</td>
+            </tr>
+            <tr>
+                <td class="total-td" colspan="5">총가격 : 10000원</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

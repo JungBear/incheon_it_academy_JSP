@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 예제</title>
+</head>
+<body>
+    <!-- <h1>Subscrib button</h1>
+
+    <button id="btn">구독하기</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var Subscribed = 0;
+        
+        btn.addEventListener('click', handleClick);
+
+        function handleClick(){
+            if(!Subscribed){
+                btn.textContent = "구독중"
+                Subscribed=1;
+            }else{
+                btn.textContent = "구독하기"
+                Subscribed =0;
+            }
+        }
+
+    </script> -->
+
+    <!-- <style>
+        #btn{
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .active{
+            fill: #e00;
+        }
+    </style>
+
+    <h1>Like button</h1>
+    <svg id="btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"></path>
+    </svg>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var liked = false;
+
+        btn.addEventListener('click', function(){
+            if(!liked){
+                btn.classList.add("active");
+                liked = true;
+            }else{
+                btn.classList.remove("active");
+                liked = false;
+            }
+        })
+    </script> -->
+
+    <!-- <style>
+        .container{
+            position: relative;
+            width: 16rem;
+        }
+
+        #pwd{
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        #btn{
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+    </style>
+
+    <h1>Password toggle</h1>
+
+    <div class="container">
+        <input type="password" name="pwd" id="pwd" value="1234">
+        <button id="btn">Show</button>
+    </div>
+
+    <script>
+        var pwd = document.getElementById('pwd');
+        var btn = document.getElementById('btn');
+        var visible = false;
+
+        btn.addEventListener('click', handleClick)
+        
+        function handleClick(){
+            if(!visible){
+                pwd.type = "text"
+                btn.textContent = "Hide";
+                visible = true;
+            }else{
+                pwd.type = "password";
+                btn.textContent = "Show";
+                visible = false;
+            }
+        }
+
+
+    </script> -->
+
+    <!-- <h1>See more</h1>
+    
+    <style>
+        #btn{
+            color: #888;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 15px;
+            padding: 0;
+        }
+    </style>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing<span id="unvisibleText">...</span></p>
+
+    <button id="btn">See more</button>
+
+    <script>
+        var unvisibleText = document.getElementById('unvisibleText');
+        var btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(){
+            unvisibleText.textContent = "Odit architecto tenetur libero, eos deleniti ratione repudiandae perspiciatis culpa expedita, debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!"
+            btn.remove();
+        })
+
+    </script>
+ -->
+<!-- 
+    <h1>Top button</h1>
+
+    <style>
+        body{
+            height: calc(100vh + 200px);
+        }
+
+        #btn{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            cursor: pointer;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <p>Scroll down to see the button</p>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="btn" class="hidden">
+        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"></path>
+    </svg>
+
+    <script>
+        var btn = document.getElementById('btn');
+
+        document.addEventListener('scroll', handleScroll);
+
+        btn.addEventListener('click', handleClick);
+
+        function handleScroll(){
+            var scrollTop = this.documentElement.scrollTop;
+            // console.log(scrollTop);
+
+            if(scrollTop > 100){
+                btn.classList.remove('hidden');
+            }else{
+                btn.classList.add('hidden');
+            }
+        }
+
+        function handleClick(){
+            document.documentElement.scrollTop = 0;
+        }
+    </script> -->
+
+    <!-- <h1>Cart</h1>
+
+    <style>
+        #btn{
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: #e00;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .icon{
+            width: 16px;
+            fill: #fff;
+        }
+
+        .text{
+            margin-left: 0.5rem;
+        }
+        
+        #btn:disabled{
+            opacity: 0.5;
+        }
+    </style>
+
+    <button id="btn">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+      </svg> <span class="text">Add To Cart</span>
+    </button>
+
+
+    <script>
+        var btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(){
+            alert("Added");
+            this.disabled = true;
+        })
+    </script> -->
+
+    <!-- <style>
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            backdrop-filter: blur(8px);
+        }
+
+        main{
+            margin-top: 4rem;
+        }
+
+        .header-inner{
+            border-bottom: 1px solid #ddd;
+        }
+
+        #btn{
+            font-size: 2rem;
+            border: none;
+            background-color: transparent;
+        }
+
+        ul{
+            margin: 0.5rem 0;
+            padding: 0;
+        }
+
+        li{
+            list-style: none;
+            text-align: center;
+        }
+
+        li:not(:last-child){
+            padding-bottom: 1rem;
+        }
+
+        .link{
+            color: #000;
+        }
+
+        .link:visited{
+            color: #000;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+
+
+    </style>
+
+    <header>
+        <div class="header-inner">
+            <button id="btn">☰</button>
+        </div>
+        <nav class="hidden" id="nav">
+            <ul>
+                <li>
+                    <a class="link" href="#">Link</a>
+                </li>
+                <li>
+                    <a class="link" href="#">Link</a>
+                </li>
+                <li>
+                    <a class="link" href="#">Link</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Top navigation</h1>
+    </main>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var nav = document.getElementById('nav');
+        var hidden = false;
+
+        btn.addEventListener('click',function(){
+            nav.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', handleClick)
+        function handleClick(e){
+            console.log(e.target);
+            if(e.target !== btn){
+                nav.classList.add('hidden');
+            }
+        }
+
+
+
+    </script> -->
+
+
+    <!-- <style>
+
+        body{
+            height: calc(100vh + 200px);
+            margin: 0;
+        }
+
+        #header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            transition: all 0.5s;
+        }
+
+        .logo{
+            text-align: center;
+        }
+
+        .bg-img{
+            background-image: linear-gradient(90deg, #222, #000);
+            width: 100%;
+            height: 400px;
+        }
+
+        #header.active{
+            background-color: #fff;
+            color: #000;
+        }
+
+
+    </style>
+
+    <header id="header" class="">
+        <h3 class="logo">Transparent NavBar</h3>
+    </header>
+
+    <div class="bg-img">
+    </div>
+
+    <script>
+        var header = document.getElementById('header');
+
+        window.addEventListener('scroll',handleScroll)
+
+        function handleScroll(){
+            var scroll = document.documentElement.scrollTop;
+
+            if(scroll>100){
+                header.classList.add("active");
+            }else{
+                header.classList.remove('active');
+            }
+        }
+    </script> -->
+
+    <!-- <style>
+        #nav-inner{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            height: 100vh;
+            width: 16rem;
+            
+            background-color: #fff;
+            transition: left 0.2s;
+        }
+
+        #logo{
+            padding: 1rem;
+        }
+
+        #nav-content a{
+            color: #000;
+        }
+
+        #overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #nav-inner.hidden{
+            left: -16rem;
+        }
+
+        #overlay.hidden{
+            display: none;
+        }
+    </style>
+
+
+    <h1>Side Bar</h1>
+    <button id="btn">Open</button>
+
+    <div id="nav-inner" class="hidden">
+        <h1 id="logo">LOGO</h1>
+        <ul id="nav-content">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </div>
+    
+    <div id="overlay" class="hidden">
+    </div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var navInner = document.getElementById('nav-inner');
+        var overlay = document.getElementById('overlay');
+
+        btn.addEventListener('click', function (){
+            navInner.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        })
+
+        overlay.addEventListener('click', function(){
+            navInner.classList.add('hidden');
+            overlay.classList.add('hidden');
+        })
+
+    </script> -->
+
+    <!-- <style>
+        #side-bar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            transition: left 0.3s;
+        }
+
+        .logo{
+            padding: 1rem;
+        }
+
+        #side-bar a{
+            color: #000;
+        }
+
+        #close-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2rem;
+            margin: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        #side-bar.hidden{
+            left : -100vw;
+        }
+    </style>
+
+    <h1>Side Bar</h1>
+    <button id="btn">Open</button>
+
+    <div id="side-bar" class="hidden">
+        <h1 class="logo">LOGO</h1>
+        <span id="close-btn">×</span>
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </div>
+
+    <script>
+        var openBtn = document.getElementById('btn');
+        var closeBtn = document.getElementById('close-btn');
+        var sideBar = document.getElementById('side-bar');
+
+        openBtn.addEventListener('click', function(){
+            sideBar.classList.remove('hidden');
+        })
+
+        closeBtn.addEventListener('click', function(){
+            sideBar.classList.add('hidden');
+        })
+
+    </script> -->
+<!-- 
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        #header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+
+            transition: top 0.3s;
+        }
+
+        .content{
+            color: #ddd;
+            font-size: 4rem;
+        }
+
+        #header.hidden{
+            top: -3rem;
+        }
+        </style>
+
+    <header id="header" class="">
+        <h3>Switch Header</h3>
+    </header>
+
+    <h1 class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque facere repudiandae eaque itaque officiis eveniet dicta aperiam minima explicabo, laudantium neque quia, corporis ipsam quisquam commodi provident. Fuga, distinctio quia.</h1>
+
+    <script>
+    var header = document.getElementById('header');
+    
+    let lastScroll = document.documentElement.scrollTop || 0
+    // 전에 스크롤했던 위치가 저장
+    document.addEventListener('scroll', function(){
+    let scrollTop = document.documentElement.scrollTop
+
+    console.log("lastScroll :",lastScroll);
+    console.log("scrollTop :",scrollTop);
+
+    if(scrollTop > lastScroll) {
+        // down
+        header.classList.add('hidden');
+    } else {
+        header.classList.remove('hidden');
+        // up
+    }
+    lastScroll = scrollTop
+    })
+    </script> -->
+<!-- 
+    <style>
+        #input{
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            padding: 0.5rem;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Live Search</h1>
+    <input type="search" placeholder="Search" name id = "input">
+    <ul>
+        <li class="item">guinness</li>
+        <li class="item">heuneken</li>
+        <li class="item">budwiser</li>
+        <li class="item">kloud</li>
+        <li class="item">asahi</li>
+    </ul>
+
+    <script>
+        var input = document.getElementById('input');
+        var items = document.getElementsByClassName('item');
+
+        input.addEventListener('keyup', handleKeyup);
+        function handleKeyup(){
+            var q = this.value.toLowerCase();
+            console.log(q);
+
+            for(var i =0; i<items.length; i++){
+                var item = items[i]
+                console.log(item);
+                if(item.textContent.indexOf(q) > -1){
+                    item.classList.remove('hidden');
+                }else{
+                    item.classList.add('hidden');
+                }
+            }
+        }
+    </script> -->
+
+    <!-- <style>
+
+    </style>
+
+    <h1>Comments</h1>
+    <input type="text" id="input">
+    <button id="btn" disabled>Send</button>
+
+    <script>
+        var input = document.getElementById('input');
+        var btn = document.getElementById('btn');
+
+        input.addEventListener('keyup', function(){
+            var p = this.value;
+            console.log(p)
+            if(p.length == 0){
+                btn.disabled = true;
+                console.log("1작동")
+            }else{
+                btn.disabled = false;
+                console.log("2작동")
+            }
+        })
+    </script> -->
+
+    <!-- <style>
+        label{
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        #input{
+            box-sizing: border-box;
+            width: 20rem;
+            padding: 0.5rem;
+        }
+
+        .warning{
+            color: #f00;
+        }
+
+        .success{
+            color: #0a0;
+        }
+    </style>
+
+    <h1>Live validator</h1>
+    <label for="input">Password</label>
+    <input type="text" id="input">
+    <p id="message" class="warning"></p>
+    <p id="message" class="warning">Password must contain at least one lowercase letter</p>
+    <p id="message" class="warning">Password must contain at least one number</p>
+    <p id="message" class="warning">Password must be at least 8 letters</p>
+    <p id="message" class="warning">Password is required</p>
+    <p id="message" class="success">Accepted</p>
+
+    <script>
+        var input = document.getElementById('input');
+        var messages = document.getElementById('message');
+        
+        var lowerCasePatt = /[a-z]/
+        var upperCasePatt = /[A-Z]/
+        var numberPatt = /[0-9]/
+
+        input.addEventListener('keyup', handleKeyup);
+
+        function handleKeyup(){
+            var pwd = this.value;
+            console.log(pwd);
+            try{
+                if(!pwd){
+                    throw 'Password is required';
+                }
+
+                if(!lowerCasePatt.test(pwd)){
+                    throw 'Password must contain at least one lowercase letter';
+                }
+
+                if(!upperCasePatt.test(pwd)){
+                    throw 'Password must contain at least one uppercase letter';
+                }
+
+                if(!numberPatt.test(pwd)){
+                    throw 'Password must contain at least one number';
+                }
+
+                if(pwd.length < 8){
+                    throw 'Password must be at least 8 letters'
+                }
+
+                messages.innerHTML = `<p id="message" class="success">Accepted</p>`;
+            }
+            catch(error){
+                messages.innerHTML = `<p id="message" class="warning">${error}</p>`;
+            }
+        }
+    </script> -->
+
+
+    <!-- <style>
+        .container{
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+        #input{
+            flex-grow: 1;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        #submit-btn{
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Newsletter</h1>
+        <form id="form">
+            <div class="container">
+                <input type="text" placeholder="johnDoe@example.com" id="input">
+                <input type="submit" value="Subscribe" id="submit-btn">
+            </div>
+        </form>
+
+        <p class="hidden" id="text">Thank you for subscribing us!</p>
+   
+
+    <script>
+        var patt = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/
+        var form = document.getElementById('form');
+        var text = document.getElementById('text');
+
+        form.addEventListener('submit', handleSubimt);
+
+        function handleSubimt(e){
+            e.preventDefault();
+
+            input = form.elements["input"].value;
+            console.log(input);
+
+            try{
+                if(!patt.test(input)){
+                    throw "invalid email";
+                }
+                form.classList.add('hidden');
+                text.classList.remove('hidden');
+            }
+            catch (error){
+                alert(error);
+            }
+        }
+    </script> -->
+
+    <!-- <style>
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0, 1fr));
+            gap: 0.5rem;
+        }
+
+        .col-span-2{
+            grid-column-start: span 2;
+        }
+
+        input{
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        label{
+            font-size: 1rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        #btn{
+            margin-top: 1rem;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Contact Form</h1>
+    <form id="form">
+        <div class="container">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" name="" id="first-name" placeholder="John">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="" id="last-name" placeholder="Doe">
+            </div>
+            <div class="form-group col-span-2">
+                <label for="phone">Phone</label>
+                <input type="text" name="" placeholder="01012345678" id="phone">
+            </div>
+        </div>
+        <button type="submit" id="btn">Submit</button>
+    </form>
+
+    <p class="hidden" id="text">Thank you and we"ll contact with you soon</p>
+
+    <script>
+        var form = document.getElementById('form');
+        var firstNamePatt = /^[a-zA-Z]+$/;
+        var lastNamePatt = /^[a-zA-Z]+$/;
+        var phonePatt = /^\d{5,11}$/;
+
+        form.addEventListener('submit', handleSubmit);
+
+        function handleSubmit(e){
+            e.preventDefault();
+
+            var firstName = form.elements['first-name'].value;
+            var lastName = form.elements['last-name'].value;
+            var phone = form.elements['phone'].value;
+            console.log(firstName);
+            console.log(lastName);
+            console.log(phone);
+
+            try{
+                if(!firstNamePatt.test(firstName)){
+                    throw "invalid First Name"
+                }
+
+                if(!lastNamePatt.test(lastName)){
+                    throw "invalid Last Name"
+                }
+                if(!phonePatt.test(phone)){
+                    throw "invalid Phone "
+                }
+
+                document.getElementById('text').classList.remove('hidden');
+                form.classList.add('hidden');
+            }catch(error){
+                alert(error);
+            }
+        }
+
+    </script> -->
+
+    <!-- <style>
+        .container{
+            position: relative;
+            width: 300px;
+        }
+
+        .container img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        button{
+            position: absolute;
+            height: 300px;
+            background-color: transparent;
+            border: none;
+            font-size: 2rem;
+            color: #ccc;
+            opacity: 0.7;
+        }
+
+        .prev-btn{
+            left: 0;
+        }
+
+        .next-btn{
+            right: 0;
+        }
+
+        .tumbnails{
+            width: 300px;
+            height: 100px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tumbnails .photo{
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            object-fit: cover;
+        }
+
+        .photo.active{
+            opacity: 1;
+        }
+
+
+    </style>
+
+    <h1>Gallery</h1>
+
+    <div class="container">
+        <img id="main" src="../img/tora.jpg" alt="">
+        <button class="prev-btn" onclick="step(-1)">❮</button>
+        <button class="next-btn" onclick="step(1)">❯</button>
+    </div>
+    <div class="tumbnails">
+        <img class="photo active" onclick="jump(0)" src="../img/tora.jpg" alt="">
+        <img class="photo" onclick="jump(1)" src="../img/tora2.jpg" alt="">
+        <img class="photo" onclick="jump(2)" src="../img/tora3.jpg" alt="">
+    </div>
+
+    <script>
+        var main = document.getElementById('main');
+        var photos = document.querySelectorAll('.photo');
+        var index = 0;
+        var lastIndex = photos.length-1;
+        
+        
+        function step(num){
+           index += num;
+           
+            if(index<0){
+                index = lastIndex
+            } 
+            if(index > lastIndex){
+                index = 0
+            }
+
+            main.src = photos[index].src;
+            console.log(index)
+            setActive();
+        }
+
+        function setActive(){
+            // console.log("함수시작");
+            for(let i = 0; i<photos.length; i++){
+                // console.log("for문 안");
+                if(i==index){
+                    photos[i].classList.add('active');
+                }else{
+                    photos[i].classList.remove('active');
+                }
+            }
+            // console.log("함수끝");
+        }
+
+        function jump(num){
+            index = num;
+
+            main.src = photos[index].src;
+            setActive();
+        }
+
+    </script> -->
+
+    <!-- <style>
+        .container{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        #main{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .inner{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 1rem;
+        }
+
+        .photo{
+            width: 50px;
+            height: 50px;
+        }
+
+        .active{
+            border:  4px solid #fff;
+            z-index: 1;
+        }
+
+
+    </style>
+
+    <h1>Auto Album</h1>
+    
+    <div class="container">
+        <img id="main" src="../img/tora4.jpg" alt="">
+        <div class="inner">
+            <img class="photo active" src="../img/tora4.jpg" alt="">
+            <img class="photo" src="../img/tora3.jpg" alt="">
+            <img class="photo" src="../img/tora2.jpg" alt="">
+        </div>
+    </div>
+
+
+    <script>
+        var mainPhoto = document.getElementById('main');
+        var photos = document.querySelectorAll('.photo');
+        var index = 0;
+
+        setInterval(function(){
+            index++;
+            // console.log(photos[index].src)
+            // // console.log(photos.length);
+            if(index > photos.length-1){
+                index = 0;
+            }
+            // console.log(index);
+            mainPhoto.src = photos[index].src;
+            for(var i = 0; i<photos.length; i++){
+                if(index==i){
+                    photos[i].classList.add('active');
+                }else{
+                    photos[i].classList.remove('active');
+                }
+            }
+        }
+        ,2000);
+    </script> -->
+
+    <!-- <style>
+        .container{
+            width: 200px;
+            height: 200px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #main{
+            width: 600px;
+            height: 200px;
+            object-fit: cover;
+            display: flex;
+            transition: all 0.5s;
+        }
+
+        .photo{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        button{
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            border: none;
+            color: #ccc;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+        #next-btn{
+            right: 0;
+        }
+
+        .dot-area{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            width: 100%;
+            bottom: 10px;
+        }
+
+        .dot{
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            z-index: 1;
+            border-radius: 99px;
+            margin-right: 5px;
+            opacity: 0.7;
+
+        }
+
+        .active{
+            background-color: #fff;
+            opacity: 1;
+        }
+
+
+    </style>
+
+    <h1>Carousel</h1>
+    <div class="container">
+        <div id="main" class="visible">
+            <img class="photo" src="../img/tora4.jpg" alt="">
+            <img class="photo" src="../img/tora3.jpg" alt="">
+            <img class="photo" src="../img/tora2.jpg" alt="">
+        </div>
+        <button id="prev-btn" class="hidden" onclick="main(-1)">❮</button>
+        <button id="next-btn" class="" onclick="main(1)">❯</button>
+        <div class="dot-area">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <script>
+        var mainArea = document.getElementById('main');
+        var photos = document.querySelectorAll('.photo');
+        var prevBtn = document.getElementById('prev-btn');
+        var nextBtn = document.getElementById('next-btn');
+        var dots = document.querySelectorAll('.dot');
+        var idx = 0;
+        var photoLastIdx = photos.length-1; 
+        // 2
+        function main(index){
+            idx += index;
+            console.log(idx);
+            if(idx == 0){
+                prevBtn.classList.add('hidden');
+            }else{
+                prevBtn.classList.remove('hidden');
+            }
+
+            if(idx == photoLastIdx){
+                nextBtn.classList.add('hidden');
+            }else{
+                nextBtn.classList.remove('hidden');
+            }
+
+            switch(idx){
+                case 1:
+                    mainArea.style.transform = "translateX(-200px)";
+                    break;
+                case 2:
+                    mainArea.style.transform = "translateX(-400px)";
+                    break;
+                default:
+                    mainArea.style.transform = "translateX(0)";
+            }
+
+            for(var i = 0; i<photos.length; i++){
+                if(idx == i){
+                    dots[i].classList.add('active');
+                }else{
+                    dots[i].classList.remove('active');
+                }
+            }
+        }
+
+    </script> -->
+
+    <!-- <style>
+        #overlay{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: fixed;
+            
+        }
+
+        .open-modal{
+            background-color: #fff;
+            width: 20rem;
+            margin: 100px auto;
+            border-radius: 15px;
+            padding: 1rem;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Modal</h1>
+    <button onclick="openModal()">Open</button>
+    <div id="overlay" class="hidden">
+        <div class="open-modal">
+            <h1>Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum magni sequi dicta provident. Autem culpa beatae id laborum in minima, molestias non asperiores, porro velit, quam excepturi quisquam similique voluptatum.</p>
+        </div>
+    </div>
+
+    <script>
+        var overlay = document.getElementById('overlay');
+        function openModal(){
+            overlay.classList.remove("hidden");
+        }
+
+        document.addEventListener('click', handleClick);
+
+        function handleClick(e){
+            // console.log(e.target);
+            if(overlay == e.target){
+                overlay.classList.add('hidden');
+            }
+        }
+    </script> -->
+
+    <!-- <style>
+
+        #overlay{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            z-index: 1;
+        }
+
+        #modal{
+            margin: 100px auto 0;
+            width: 300px;
+            height: 300px;
+        }
+
+        #modal-img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        #img-info{
+            text-align: center;
+            color: #fff;
+        }
+
+        .hidden{
+            display: none;
+        }
+        
+        .gallery{
+            display: flex;
+        }
+
+        .photo{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .photo:hover{
+            opacity: 1;
+        }
+
+        .mouse-over{
+            opacity: 1;
+        }
+
+    </style>
+
+    <h1>Q. Modal Gallery</h1>
+    
+    <div id="overlay" class="hidden">
+        <div id="modal">
+            <img id="modal-img" src="../img/tora.jpg" alt="">
+            <h3 id="img-info">Tora1</h3>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img class="photo" src="../img/tora.jpg" onclick="openModal(0)" alt="Tora1">
+        <img class="photo" src="../img/tora2.jpg" onclick="openModal(1)" alt="Tora2">
+        <img class="photo" src="../img/tora3.jpg" onclick="openModal(2)" alt="Tora3">
+    </div>
+
+
+    <script>
+        var overlay = document.getElementById('overlay');
+        var modalImg = document.getElementById('modal-img');
+        var imgInfo = document.getElementById('img-info');
+        var photos = document.querySelectorAll('.photo');
+
+
+        function openModal(idx){
+            overlay.classList.remove('hidden');
+            modalImg.src = photos[idx].src;
+            imgInfo.textContent = photos[idx].alt;
+        }
+
+        overlay.addEventListener('click',function(e){
+            overlay.classList.add('hidden')
+        })
+
+    </script> -->
+
+    <!-- <style>
+        .container{
+            color: #000;
+            background-color: #fff;
+        }
+
+        .dark-mode{
+            color: #fff;
+            background-color: #333;
+        }
+    </style>
+
+    <h1>Theme choice</h1>
+    <input type="checkbox" name="" id="checkbox"> 
+    <label for="checkbox">Dark Mode</label>
+
+    <div>
+        <ul class="list">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+        </ul>
+    </div>
+
+    <script>
+        var checkbox = document.getElementById('checkbox');
+        var list = document.querySelector('.list');
+
+        document.addEventListener("DOMContentLoaded",handleLoaded);
+
+        function handleLoaded(){
+            var darkTheme = localStorage.getItem('darkTheme');
+            if(darkTheme){
+                checkbox.checked = true;
+                list.classList.add('dark-mode');
+                localStorage.setItem('darkTheme',"on");
+            }
+        }
+
+        checkbox.addEventListener('click', function(){
+            console.log(checkbox.checked);
+            if(checkbox.checked){
+                list.classList.add('dark-mode');
+                localStorage.setItem('darkTheme',"on");
+            }else{
+                list.classList.remove('dark-mode');
+                localStorage.removeItem('darkTheme');
+            }
+        })
+
+    </script> -->
+<!-- 
+    <style>
+        .text{
+            color: #ddd;
+        }
+
+        button{
+            padding: 0.5rem;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Block promotion</h1>
+    <div id="container">
+        <h1 class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In et consectetur blanditiis molestias officiis, eius suscipit sed assumenda autem, sequi nemo nihil ratione. Quas reprehenderit sit perferendis similique vero quos.</h1>
+        <button id="close-btn">Close</button>
+        <button id="block-btn">Do not show anymore</button>
+    </div>
+
+    <script>
+        var closeBtn = document.getElementById('close-btn')
+        var blockBtn = document.getElementById('block-btn')
+        var promotion = document.getElementById('container');
+
+        closeBtn.addEventListener('click', function(){
+            promotion.classList.add('hidden');
+        })
+
+        document.addEventListener('DOMContentLoaded', function(){
+            var blocked = localStorage.getItem("blocked")
+
+            if(blocked){
+                promotion.classList.add('hidden');
+            }
+        })
+
+        blockBtn.addEventListener('click', function(){
+            var date = new Date().toLocaleDateString();
+
+            localStorage.setItem('blocked', date);
+            promotion.classList.add('hidden');
+        })
+
+    </script> -->
+
+    <!-- <style>
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        .item{
+            margin-bottom: 0.25rem;
+            list-style: none;
+        }
+
+        .btn{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            border: none;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        .btn::after{
+            content: "+";
+        }
+
+        .content{
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+
+        .active .content{
+            max-height: 200px;
+        }
+
+        .active .btn::after{
+            content: "-";
+        }
+
+
+    </style>
+
+    <h1>Accordion</h1>
+
+    <ul>
+        <li class="item">
+            <button class="btn" onclick="openContent(0)">Guinness</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius sapiente consequatur in, veniam rerum harum illum earum consectetur nesciunt quas voluptate. Eius perferendis nihil, tempore sit numquam est quasi debitis?</p>
+            </div>  
+        </li>
+        <li class="item">
+            <button class="btn" onclick="openContent(1)">Guinness</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius sapiente consequatur in, veniam rerum harum illum earum consectetur nesciunt quas voluptate. Eius perferendis nihil, tempore sit numquam est quasi debitis?</p>
+            </div>  
+        </li>
+        <li class="item">
+            <button class="btn" onclick="openContent(2)">Guinness</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius sapiente consequatur in, veniam rerum harum illum earum consectetur nesciunt quas voluptate. Eius perferendis nihil, tempore sit numquam est quasi debitis?</p>
+            </div>  
+        </li>
+
+    </ul>
+
+    <script>
+        var btns = document.querySelectorAll('.btn');
+        var items = document.querySelectorAll('.item')
+        var flag = 0;
+
+        function openContent(idx){
+            if(!flag){
+                items[idx].classList.add('active');
+                flag++;
+            }else{
+                items[idx].classList.remove('active');
+                flag--;
+            }
+
+        }
+
+    </script> -->
+
+    <!-- <style>
+        input{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-bottom : 0.5rem;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .item{
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete-btn{
+            cursor: pointer;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Search history</h1>
+
+    <input type="text" placeholder="Search Google" disabled>
+    <ul>
+        <li class="item">
+            <span>I believe I can fly</span>
+            <span class="delete-btn" onclick="deleteItem(0)">×</span>
+        </li>
+        <li class="item">
+            <span>I believe I can touch the sky</span>
+            <span class="delete-btn" onclick="deleteItem(1)">×</span>
+        </li>
+        <li class="item">
+            <span>I think about it every night and day</span>
+            <span class="delete-btn" onclick="deleteItem(2)">×</span>
+        </li>
+        <li class="item">
+            <span>Spread my wings and fly away</span>
+            <span class="delete-btn" onclick="deleteItem(3)">×</span>
+        </li>
+    </ul>
+
+    <script>
+        var items = document.querySelectorAll('.item');
+
+        function deleteItem(idx){
+            items[idx].classList.add('hidden');
+        }
+    </script> -->
+
+    <!-- <style>
+        input{
+            display: none;
+        }
+
+        .btn{
+            padding: 0.5rem 0.75rem;
+        }
+        input:checked + .btn{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Filtering list</h1>
+
+    <div class="btn-group">
+        <input type="radio" name="car" id="all">
+        <label class="btn" for="all" onclick="f('all')">All</label>
+        <input type="radio" name="car" id="kr">
+        <label class="btn" for="kr" onclick="f('kr')">Korea</label>
+        <input type="radio" name="car" id="jp">
+        <label class="btn" for="jp" onclick="f('jp')">Japan</label>
+        <input type="radio" name="car" id="se">
+        <label class="btn" for="se" onclick="f('se')">Sweden</label>
+    </div>
+
+    <ul>
+        <li class="item kr">Hyundai</li>
+        <li class="item kr">Kia</li>
+        <li class="item jp">Toyota</li>
+        <li class="item jp">Honda</li>
+        <li class="item jp">Lexus</li>
+        <li class="item se">Volvo</li>
+    </ul>
+
+    <script>
+        var items = document.querySelectorAll('.item')
+
+        function f(nation){
+            var filter = nation;
+            console.log(filter);
+
+            for(var i = 0; i<items.length; i++){
+                if(filter == "all"){
+                    items[i].classList.remove('hidden');
+                }else if(filter == 'kr'){
+                    if(items[i].classList.contains('kr')){
+                        items[i].classList.remove('hidden');
+                    }else{
+                        items[i].classList.add('hidden');
+                    }
+                }else if(filter == 'jp'){
+                    if(items[i].classList.contains('jp')){
+                        items[i].classList.remove('hidden');
+                    }else{
+                        items[i].classList.add('hidden');
+                    }
+                }else{
+                    if(items[i].classList.contains('se')){
+                        items[i].classList.remove('hidden');
+                    }else{
+                        items[i].classList.add('hidden');
+                    }
+                }
+                
+            }
+        }
+
+    </script> -->
+
+    <!-- <style>
+
+        input{
+            display: none;
+        }
+
+        .btn{
+            padding: 0.5rem 0.75rem;
+        }
+
+        input:checked + .btn{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+    </style>
+
+    <h1>Tab Contents</h1>
+
+    <h3>Car manufacturers</h3>
+
+    <div>
+        <input type="radio" name="nation" id="kr"checked>
+        <label class="btn" for="kr" onclick="f('kr')">Korea</label>
+        <input type="radio" name="nation" id="jp">
+        <label class="btn" for="jp" onclick="f('jp')">Japan</label>
+        <input type="radio" name="nation" id="se">
+        <label class="btn" for="se" onclick="f('se')">Sweden</label>
+    </div>
+
+    <div>
+        <p class="text kr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo officiis ut sunt soluta nisi ipsum. Dolor, ratione! Illum omnis voluptatem magni minima molestiae officia, tempore accusamus qui magnam dolores sint.</p>
+        <p class="text jp hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo officiis ut sunt soluta nisi ipsum. Dolor, ratione! Illum omnis voluptatem magni minima molestiae officia,</p>
+        <p class="text se hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+    </div>
+
+    <script>
+        var texts = document.querySelectorAll('.text');
+        function f(filter){
+            for(var i = 0 ; i< texts.length; i++){
+                if(texts[i].classList.contains(filter)){
+                    texts[i].classList.remove('hidden');
+                }else{
+                    texts[i].classList.add('hidden');
+                }
+            }
+        }
+    </script> -->
+
+    <!-- <style>
+        #drop-zone{
+            box-sizing: border-box;
+            border: 4px dashed #ddd;
+            width: 100%;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <h1>Drag & Drop</h1>
+
+    <div id="drop-zone">
+        <p>Drag one or more files to this <i>drop zone.</i></p>
+    </div>
+    <p id="done" class="hidden">Submitted</p>
+
+    <script>
+        var dropZone = document.getElementById('drop-zone');
+        var done = document.getElementById('done');
+
+        dropZone.addEventListener('dragover', dragOverHandler);
+        dropZone.addEventListener('drop', dropHandler);
+
+        function dropHandler(e){
+            e.preventDefault();
+
+            var files = e.dataTransfer.files;
+            console.log(files)
+
+            dropZone.classList.add('hidden');
+            done.classList.remove('hidden');
+        }
+
+        function dragOverHandler(e){
+            e.preventDefault();
+        }
+    </script> -->
+<!-- 
+    <style>
+        h1{
+            color: #888;
+        }
+
+        .item{
+            opacity: 0;
+        }
+
+        .show{
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+    </style>
+
+    <h1>Born effect</h1>
+
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat eveniet asperiores enim eaque consectetur vel hic ipsam cupiditate error eos minima adipisci veniam, tempore consequatur cumque odio animi beatae.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat eveniet asperiores enim eaque consectetur vel hic ipsam cupiditate error eos minima adipisci veniam, tempore consequatur cumque odio animi beatae.</h1>
+    <h1 class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat eveniet asperiores enim eaque consectetur vel hic ipsam cupiditate error eos minima adipisci veniam, tempore consequatur cumque odio animi beatae.</h1>
+    <h1 class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat eveniet asperiores enim eaque consectetur vel hic ipsam cupiditate error eos minima adipisci veniam, tempore consequatur cumque odio animi beatae.</h1>
+    <h1 class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat eveniet asperiores enim eaque consectetur vel hic ipsam cupiditate error eos minima adipisci veniam, tempore consequatur cumque odio animi beatae.</h1>
+
+    <script>
+        var items = document.querySelectorAll('.item');
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {  
+                    // 요소가 화면에 나타나면 show 클래스를 추가하여 애니메이션을 적용합니다.
+                    entry.target.classList.add('show');
+                    // IntersectionObserver를 더 이상 관찰하지 않습니다.
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // if (springBlendImg) {
+        //     observer.observe(springBlendImg);
+        // }
+        for(var i = 0; i<items.length; i++){
+            observer.observe(items[i]);
+        }
+    </script> -->
+
+    <!-- <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #eee;
+        }
+
+        button{
+            background-color: #333333;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5rem 0.75rem;
+            margin: 1rem 0;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #222222;
+        }
+
+        #container{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.5rem;
+        }
+
+        textarea{
+            width: 100%;
+            height: 12rem;
+            padding: 1rem;
+            box-shadow: 0 0 10px #ddd;
+            outline: none;
+            resize: none;
+            border: none;
+        }
+        
+    </style>
+
+    <button id="add-btn">New Note +</button>
+    <div id="container">
+        <textarea></textarea>
+    </div>
+
+    <script>
+
+var container = document.getElementById("container");
+    var addBtn = document.getElementById("add-btn");
+    var notes;
+
+    // Create seed data
+    if (!localStorage.getItem("noteStorage")) {
+      var SEED = [{ id: "n0", content: "My first memo!" }];
+
+      saveData(SEED);
+    }
+
+    document.addEventListener("DOMContentLoaded", getNotes);
+    addBtn.addEventListener("click", addNote);
+
+    /* 
+      functions 
+      
+      1 CRUD
+      getNotes
+      addNote
+      editNote
+      deleteNote
+
+      2 utils
+      createNoteElement
+      saveData
+    */
+
+    // Get all notes
+    function getNotes() {
+        notes = JSON.parse(localStorage.getItem("noteStorage"));
+
+        for (var i = 0; i < notes.length; i++) {
+            createNoteElement(notes[i].id, notes[i].content);
+        }
+    }
+
+    // Add new note
+    function addNote() {
+        var newNote = { id: "n" + Date.now(), content: "" };
+
+        notes.push(newNote);
+
+        saveData(notes);
+
+        createNoteElement(newNote.id, newNote.content);
+    }
+
+    // Edit note
+    function editNote(id, content) {
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].id == id) {
+            notes[i].content = content;
+            }
+        }
+
+    saveData(notes);
+    }
+
+    // Delete note
+    function deleteNote(id, noteElement) {
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].id == id) {
+            // splice(index, count)
+            notes.splice(i, 1);
+            }
+        }
+
+        saveData(notes);
+
+        noteElement.remove();
+    }
+
+    // Render 
+    function createNoteElement(id, content) {
+        var noteElement = document.createElement("textarea");
+
+        noteElement.value = content;
+
+        noteElement.addEventListener("keyup", function () {
+            editNote(id, this.value);
+        });
+
+        noteElement.addEventListener("dblclick", function () {
+            deleteNote(id, this);
+        });
+
+        container.prepend(noteElement);
+    }
+
+    // Synchronize localStorage
+    function saveData(notes) {
+      localStorage.setItem("noteStorage", JSON.stringify(notes));
+    }
+  
+
+
+    </script> -->
+
+</body>
+</html>

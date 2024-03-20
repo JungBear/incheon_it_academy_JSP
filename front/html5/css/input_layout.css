@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+div, input, textarea{
+    box-sizing: border-box;
+}
+
+.component-signup{
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    min-width: 400px;
+    margin: auto;
+    padding: 30px;
+    border: 2px dashed yellowgreen;
+}
+
+.component-signup input,
+.component-signup textarea{
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid violet;
+    border-radius: 15px;
+}
+
+.component-signup input[type=submit]{
+    width: 200px !important;
+    background-color: orange;
+    border: 1px solid darkorange;
+}
+
+.component-signup input[type=submit]:hover,
+.component-signup input[type=submit]:active,
+.component-signup input[type=submit]:focus{
+    background-color: skyblue;
+    border: 1px solid skyblue;
+}
+
+.component-signup input[type=checkbox]{
+    width: 20px;
+}
+
+#width-40{
+    width: 40%;
+    float: left;
+    margin-right: 30px;
+}
+
+.clear-both{
+    clear: both;
+}

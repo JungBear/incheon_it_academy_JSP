@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+
+
+
+    <script>
+
+        var 정수 = 3;
+        var 실수 = 3.14;
+        var 문자열 = "문자열";
+        var 불린 = true;
+
+        if(실수==3){
+            console.log(true);
+        }else{
+            console.log(false);
+        }
+
+        var 결과 = 0;
+
+        if(결과=== 0){
+            console.log("결과는 0과 같다");
+        }
+        if(결과 !== 0){
+            console.log("결과는 0과 다르다");
+        }
+        
+        function 큰값인지검사(num1, num2){
+            if(num1 > num2){
+                 return "첫번째 숫자가 더 크다";
+            }else if(num1 < num2){
+                return "두번째 숫자가 더 크다";
+            }else{
+                return "두수는 같다"
+            }
+        }
+
+        결과 = 큰값인지검사(3,4)
+
+        console.log(결과)
+
+        결과 = 10
+        
+        if(결과 > 5){
+            console.log("5보다 크다");
+        }else{
+            console.log("5보다 크지않다")
+        }
+        
+
+        var age = 19;
+
+        function checkAdult(age){
+            if(age>=20){
+                return "성인"
+            }else{
+                return "미성년자"
+            }
+        }
+
+        결과 = checkAdult(age)
+        console.log(결과)
+
+        var busFare = 0;
+
+        function busFareConditions(age){
+            if(age<5){
+                return 0;
+            }else if(5<=age<14){
+                return 500;
+            }else if(14<=age<20){
+                return 750;
+            }else if(20<=age<75){
+                return 1000;
+            }else{
+                return 0;
+            }
+        }
+
+        busFare = busFareConditions(age)
+        console.log(busFare+ "원");
+
+        var height = 130;
+        function boardOrNot(height){
+            if(height>190 || height <130){
+                return "불가";
+            }else{
+                return "가능";
+            }
+        }
+        결과 = boardOrNot(height);
+        console.log(결과)
+
+        var message = "ㅂㅈㄷㅂㅈㄷㅂㅈqweqweqqwwㄷ"
+        function countMessage(message){
+            let messageLength = message.length;
+            console.log(messageLength)
+            if (3<=messageLength && messageLength <=10){
+                 return "맞다"      ; 
+            }else{
+                return "아니다";
+            }
+        }
+        console.log(countMessage(message))
+        
+        var boolean = true;
+        var num = 4;
+        var result  = 0;
+
+        function or(num){
+            if(num === 3 || num === 10){
+                return "맞다";
+            }else{
+                return "아니다";
+            }
+        }
+        result = or(num);
+        console.log(result);
+
+    </script>  
+</body>
+</html>

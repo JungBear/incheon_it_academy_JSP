@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    <h1>Q. File upload button</h1>
+
+    <style>
+        #file-input{
+            display: none;
+        }
+        .btn{
+            /* 컨테이너가 아이템에 필요한 만큼만 넓이를 가진다 */
+            display: inline-flex;
+            padding: 0.5rem 0.75rem;
+            border: 2px solid #0bf;
+            color: #0bf;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .icon{
+            width: 1.5rem;
+            fill: #0bf;
+        }
+        .text{
+            margin: 0.5rem;
+        }
+        .btn:hover{
+            background-color: #0bf;
+            color: white;
+        }
+        .btn:hover .icon{
+            fill: white;
+        }
+
+    </style>
+
+    <input type="file" id="file-input" name="">
+    
+    <label for="file-input" class="btn">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"/></svg>
+        <span class="text">
+            Choose file(s)
+        </span>
+    </label> -->
+
+
+    <!-- <style>
+        .btn{
+            display: flex;
+            flex-grow: 1;
+            border: 1px solid gray;
+            border-radius: 2rem;
+            background-color:transparent;
+            width: 100%;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            background-color: #eee;
+        }
+        p{
+            color: gray;
+        }
+        .icon{
+            width: 1.5rem;
+            fill: gray;
+        }
+    </style>
+
+
+        <button type="button" class="btn">
+            <p>Show more
+            </p>  
+            <svg class="icon"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc
+
+             -->
+    <!-- <h1>드랍 다운</h1>
+
+    <style>
+        .container{
+            display: inline-block;
+        }
+
+        .btn{
+            border: none;
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .content{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 12rem;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            /* 처음에 안보이는 상태 */
+            display: none;
+            /* 떠있는 형태 만들기 */
+            position: absolute;
+        }
+
+        .link{
+            display: block;
+            color: #000;
+            padding: 0.5rem;
+        }
+
+        /* 버튼에 마우스를 올렸을때 컨텐츠 나타난다 */
+        /* container에 호버인 이유는 컨텐츠를 보려고 마우스를 옮겨도 남아있게 하기위해서 */
+        .container:hover .content{
+            display: block;
+        }
+
+        .link:hover{
+            background-color: #eee;
+        }
+    </style>
+
+    <div class="container">
+        <button class="btn">dropdown</button>
+        <ul class="content">
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+        </ul>
+    </div>
+
+    <p>..</p> -->
+
+    <!-- <h1>드롭 다운</h1>
+
+    <style>
+        .container{ 
+            border: 1px dashed;
+            width: 12rem;
+        }
+        .select{
+            background-color: transparent;
+            width: inherit;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .icon{
+            width: 0.75rem;
+        }
+        .content{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: inherit;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #fff;
+            box-sizing: border-box;
+            display: none;
+            position: absolute;
+        }
+
+        .content li{
+            padding: 0.5rem;
+        }
+
+        .container:hover .content{
+            display: block;
+        }
+
+        .content li:hover{
+            background-color: #eee;
+        }
+
+
+    </style>
+    
+    <div class="container">
+        <button class="select">
+            <span>Car Manifacturer</span>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+        </button>
+
+        <ul class="content">
+            <li>Volvo</li>
+            <li>Hyundai</li>
+            <li>Toyota</li>
+        </ul>
+    </div>
+    <p>...
+    </p> -->
+
+    <!-- <h1>필터 버튼</h1>
+
+    <style>
+        nav{
+            border: 1px dashed;
+            width: 24rem;
+            /* 버튼을 감싸지 않는다 */
+            white-space: nowrap;
+            /* overflow를 스크롤로 */
+            overflow-x: auto;
+        }
+
+        .btn{
+            padding: 0.5rem 0.75rem;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            margin: 0 0.25rem;
+            border-radius: 99px;
+            font-size: 1rem;
+        }
+
+        /* 크롬 사파리 오페라에서 스크롤바 숨기기 */
+        nav::-webkit-scrollbar{
+            display: none;
+        }
+        
+    </style>
+
+    <nav>
+        <button class="btn">London</button>
+        <button class="btn">New York</button>
+        <button class="btn">Amsterdam</button>
+        <button class="btn">Berlin</button>
+        <button class="btn">Seoul</button>
+        <button class="btn">Tokyo</button>
+        <button class="btn">Taipei</button>
+    </nav> -->
+
+    <!-- <h1>Notification Badge</h1>
+
+    <style>
+        .container{
+            /* border: 1px dashed; */
+            display: inline-block;
+            position: relative;
+        }
+
+        .icon{
+            width: 2rem;
+            fill: #333;
+        }
+
+        .badge{
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #f00;
+            display: block;
+            border-radius: 99px;
+            position: absolute;
+            top: 0;
+            right: -0.25rem;
+            border:2px solid #fff;
+        }
+    </style>
+
+    <div class="container">
+        <span class="badge"></span>
+        <svg class="icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 448 512">
+            <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/>
+        </svg>
+    </div> -->
+<!-- 
+    <h1>닫기 버튼</h1>
+
+    <style>
+        .container{
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            position: relative;
+            padding: 0.1rem;
+        }
+
+        .text{
+            padding: 0.5rem;
+            margin: 0.5rem;
+        }
+
+        .icon{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: inherit;
+            border: none;
+            width: 1rem;
+        }
+        
+        
+    </style>
+
+    <div class="container">
+        <h3 class="text">Message for you!</h3>
+        <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus araesentium voluptas illo quas, dolore ab porro nesciunt!</p>
+        <svg 
+        class="icon"
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 384 512">
+        <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+
+
+    </div> -->
+
+
+    <!-- <h1>토글 스위치</h1>
+
+    <style>
+        #checkbox{
+            display: none;
+        }
+        
+        .switch{
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            padding: 4px;
+            background-color: #ddd;
+            border-radius: 99px;
+            /* 애니메이션 배경화면이 변하는데 0.5초가 걸린다*/
+            transition: background-color 0.5s;
+        }
+
+        .head{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: inherit;
+            transition: transform 0.5s;
+        }
+
+        /* 1 +  2 : 1 바로 밑의 2를 선택한다. */
+        #checkbox:checked + .switch{
+            background-color: #333;
+        }
+
+        /* 헤드 움직이기 */
+
+        #checkbox:checked + .switch .head{
+            transform: translateX(20px);
+        }
+    </style>
+
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox" class="switch">
+        <div class="head"></div>
+    </label> -->
+
+    <!-- <h1>움직이는 메뉴버튼</h1>
+
+    <style>
+        .container{
+            width: 50px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item{
+            width: inherit;
+            height: 5px;
+            background-color: #000;
+            transition: transform 0.2s;
+        }
+
+        .container:hover .top{
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .container:hover .bottom{
+            transform: translateY(-10px) rotate(-45deg);
+        }
+    </style>
+
+    <div class="container">
+        <div class="item top"></div>
+        <div class="item bottom"></div>
+    </div> -->
+
+    <!-- <style>
+        body{
+            /* 의도적으로 스크롤 생성 */
+            /* calc(연산) - 계산된 값을 적용 */
+            height: calc(100vh + 100px);
+        }
+
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .menu{
+            /* 기본값 제거 */
+            padding: 0;
+            margin: 0 ;
+            list-style: none;
+            /* layout */
+            display: flex;
+            background-color: #333;
+        }
+
+        .link{
+            display: block;
+            padding: 0.75rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            background-color: #222;
+        }
+
+        main {
+            margin-top: 4rem;
+        }
+    </style>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li>
+                <a href="#" class="link">Home</a>
+            </li>
+            <li>
+                <a href="#" class="link">About</a>
+            </li>
+            <li>
+                <a href="#" class="link">Blog</a>
+            </li>
+            <li>
+                <a href="#" class="link">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Navigation Bar</h1>
+        <p>..</p>
+    </main> -->
+
+    <!-- <style>
+        body{
+            /* 의도적으로 스크롤 생성 */
+            /* calc(연산) - 계산된 값을 적용 */
+            height: calc(100vh + 100px);
+        }
+
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .menu{
+            /* 기본값 제거 */
+            padding: 0;
+            margin: 0 ;
+            list-style: none;
+            /* layout */
+            display: flex;
+            background-color: #333;
+        }
+
+        .link{
+            display: block;
+            padding: 0.75rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            background-color: #222;
+        }
+
+        .content{
+            width: 150px;
+            background-color: #fff;
+            border: 1px solid gray;
+            padding: 0;
+            margin: 0;
+            margin-left: 100px;
+            display: none;
+        }
+
+        .drop-link{
+            padding: 0.5rem 0.75rem;
+            list-style: none;
+            font-size: 1rem;
+            
+        }
+
+        .drop-container:hover .content,
+        .content:hover{
+            display: block;
+        }
+
+        .drop-link:hover{
+            background-color: #eee;
+        }
+
+        main {
+            margin-top: 4rem;
+        }
+    </style>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li class="drop-container">
+                <a href="#" class="link drop-nav">Dropdown</a>
+            </li>
+            <ul class="content">
+                <li class="drop-link">
+                    <a href="#">Link</a>
+                </li>
+                <li class="drop-link">
+                    <a href="#">Link</a>
+                </li>
+                <li class="drop-link">
+                    <a href="#">Link</a>
+                </li>
+            </ul>
+        </ul>
+
+    </nav> -->
+
+
+    <!-- <style>
+        body {
+            /* 의도적으로 스크롤 생성 */
+            /* calc(연산) - 계산된 값을 적용 */
+            height: calc(100vh + 100px);
+        }
+    
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    
+        .menu {
+            /* 기본값 제거 */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            /* layout */
+            display: flex;
+            background-color: #333;
+            /* position: relative; 부모 요소의 위치 설정 */
+        }
+    
+        .link {
+            display: block;
+            padding: 0.75rem;
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        .link:hover {
+            background-color: #222;
+        }
+    
+        .drop-container {
+            /* 자식 요소의 위치 설정을 위해 부모 요소의 position을 설정 */
+            position: relative; 
+        }
+    
+        .content {
+            /* 부모 요소 .drop-container를 기준으로 배치 */
+            position: absolute; 
+            left: 0;
+            width: 150px;
+            background-color: #fff;
+            border: 1px solid gray;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+    
+        .drop-link {
+            padding: 0.5rem 0.75rem;
+            list-style: none;
+            font-size: 1rem;
+        }
+    
+        .drop-container:hover .content {
+            display: block;
+        }
+    
+        .drop-link:hover {
+            background-color: #eee;
+        }
+    
+        .drop-link a,
+        .drop-link a:visited{
+            color: black;
+            text-decoration: none;
+        }
+
+        main {
+            margin-top: 4rem;
+        }
+    </style>
+    
+    <nav class="navbar">
+        <ul class="menu">
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li class="drop-container">
+                <a href="#" class="link drop-nav">Dropdown</a>
+                <ul class="content">
+                    <li class="drop-link">
+                        <a href="#">Link</a>
+                    </li>
+                    <li class="drop-link">
+                        <a href="#">Link</a>
+                    </li>
+                    <li class="drop-link">
+                        <a href="#">Link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Navigation Bar With dropdown menu</h1>
+        <p>..</p>
+    </main> -->
+
+    <!-- <style>
+        body {
+            /* 의도적으로 스크롤 생성 */
+            /* calc(연산) - 계산된 값을 적용 */
+            height: calc(100vh + 100px);
+        }
+    
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    
+        ul{
+            /* 기본값 제거 */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .menu {
+            /* layout */
+            display: flex;
+            background-color: #333;
+            /* position: relative; 부모 요소의 위치 설정 */
+        }
+    
+        .link {
+            display: block;
+            padding: 0.75rem;
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        .link:hover {
+            background-color: #222;
+        }
+    
+        .drop-container {
+            /* 자식 요소의 위치 설정을 위해 부모 요소의 position을 설정 */
+            position: relative; 
+        }
+    
+        .content {
+            /* 부모 요소 .drop-container를 기준으로 배치 */
+            position: absolute; 
+            top: 40px;
+            left: 0;
+            width: 12rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+    
+        .drop-link {
+            display: block;
+            padding: 0.5rem;
+            list-style: none;
+            font-size: 1rem;
+        }
+    
+        .drop-container:hover .content {
+            display: block;
+        }
+
+        .drop-btn{
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.75rem;
+            cursor: pointer;
+        }
+    
+        .drop-link:hover {
+            background-color: #eee;
+        }
+
+        .drop-btn:hover{
+            background-color: #222;
+        }
+    
+        .drop-link a,
+        .drop-link a:visited{
+            color: black;
+            text-decoration: none;
+        }
+
+        main {
+            margin-top: 4rem;
+        }
+    </style>
+    
+    <nav class="navbar">
+        <ul class="menu">
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <div class="drop-container">
+                    <button class="drop-btn">Dropdown</a>
+                    <ul class="content">
+                        <li class="drop-link">
+                            <a href="#">Link</a>
+                        </li>
+                        <li class="drop-link">
+                            <a href="#">Link</a>
+                        </li>
+                        <li class="drop-link">
+                            <a href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Navigation Bar With dropdown menu</h1>
+        <p>..</p>
+    </main> -->
+
+    <!-- <style>
+        header{
+            position: fixed;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            height: 4rem;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+        
+        .logo{
+            margin: 0;
+        }
+
+        .btn{
+            position: absolute;
+            left: 0;
+            width: 0 1rem;
+            height: 100%;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+
+    </style>
+    
+    <header>
+        <button class="btn">&#9776;</button>
+        <h3 class="logo">COMPANY</h3>
+        
+    </header> -->
+
+
+
+    <!-- <style>
+        header{
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            height: 4rem;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+
+        .container{
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo{
+            margin: 0;
+            margin-left: 1rem;
+        }
+        .btn{
+            height: 100%;
+            padding: 0 1rem;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+        }
+
+        .account{
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            color: #000;
+        }
+
+    </style>
+    
+    <header>
+        <div class="container">
+            <button class="btn">&#9776;</button>
+            <h3 class="logo">COMPANY</h3>
+        </div>
+        <a class="account" href="#" >Accounts</a>
+    </header> -->
+
+
+    <!-- <style>
+        .side-bar{
+            /* border: 1px dashed; */
+            width: 16rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .logo{
+            padding: 1rem;
+        }
+        
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link{
+            display: block;
+            padding: 1rem;
+            color: #fff;
+        }
+
+        .link:hover{
+            background-color: #222;
+        }
+        
+        main{
+            margin-left: 16rem;
+            padding: 0 1rem;
+        }
+        
+    </style>
+
+    <nav class="side-bar">
+        <h1 class="logo">LOGO</h1>
+        <ul>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Side Bar</h1>
+        <p>..</p>
+    </main> -->
+
+    <!-- <style>
+        .side-bar{
+            /* border: 1px dashed; */
+            width: 16rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .logo{
+            padding: 1rem;
+        }
+        
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a{
+            display: block;
+        }
+        .link{
+            padding: 1rem;
+            color: #fff;
+        }
+
+        .link:hover{
+            background-color: #222;
+        }
+        
+        main{
+            margin-left: 16rem;
+            padding: 0 1rem;
+        }
+        
+        .dropdown-container{
+            background-color: #333;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            padding: 0;
+            width: 100%;
+            text-align: start;
+        }
+
+        .dropdown-container:hover .dropdown-menu,
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        .dropdown-menu{
+            padding: 0.5rem;
+            display: none;
+        }
+
+        .dropdown-menu a{
+            color: gray;
+            padding: 0.5rem;
+        }
+
+        .dropdown-menu li:hover{
+            background-color: #222;
+        }
+
+
+    </style>
+
+    <nav class="side-bar">
+        <h1 class="logo">LOGO</h1>
+        <ul>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <button class="dropdown-container">
+                <a href="#" class="link">Dropdown</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+
+                </ul>
+            </button>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Side Bar</h1>
+        <p>..</p>
+    </main> -->
+
+    <!-- <style>
+
+        .header-nav{
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #111;
+            color: #fff;
+            padding-left: 1rem;
+            margin: 0;
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            position: fixed;
+            align-items: center;
+        }
+
+        .logo{
+            margin: 0;
+        }
+
+        .side-bar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid #ddd;
+            height: 100%;
+            width: 16rem;
+        }
+
+        .side-bar ul{    
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 5rem;
+        }
+
+        .side-bar a{
+            display: block;
+            padding: 0.75rem;
+            color: #000;
+        }
+
+        .side-bar a:hover,
+        .side-bar a:active,
+        .side-bar a:visited,
+        .side-bar a:focus
+        {
+            color: #000;
+            background-color: #eee;
+        }
+        
+        main{
+            margin-top: 5rem;
+            margin-left: 16rem;
+            padding: 0 1rem;
+        }
+
+    </style>
+
+
+    <header>
+        <div class="header-nav">
+            <H3 class="logo">DashBoard</H3>
+        </div>
+    </header>
+    <div class="side-bar">
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+
+        </ul>
+    </div>
+
+    <main>
+        <h1>Content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, cupiditate? Expedita veritatis ad sequi tempora ratione aperiam officia quidem eos cum dolor quas alias hic nisi reiciendis, voluptatibus ea dicta.</p>
+    </main>
+ -->
+
+    <!-- <style>
+        .container{
+            /* border: 1px dashed; */
+            width: 24rem;
+            margin: auto;
+            position: relative;;
+        }
+
+        .search-input{
+            width: inherit;
+            border:1px solid #ddd;
+            padding: 0.5rem 2.5rem;
+            font-size: 1rem;
+            border-radius: 99px;
+            outline: none;
+        }
+
+        .icon{
+            width: 1rem;
+            height: 100%;
+            position: absolute;
+            top :0;
+            left: 1rem;
+            fill: #888;
+        }
+
+    </style>
+
+    <h1>Search Form</h1>
+    <div class="container">
+        <input type="search" class="search-input" placeholder="Search Google" name="q" autocomplete="off">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+        </svg>
+    </div> -->
+
+    <!-- <style>
+        .login-form{
+            width: 24rem;
+            margin: 100px auto 0;
+        }
+
+        .login-form h1{
+            text-align: center;
+        }
+
+        .login-label{
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .login-input{
+            border: 1px solid #ddd;
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .login-btn{
+            width: 100%;
+            margin-bottom: 0.5rem;
+            padding:0.5rem;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .flex-container{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flex-container a{
+            color: #000;
+        }
+    </style>
+
+        <div class="login-form"> 
+            <h1>Login</h1>
+            <label class="login-label" for="id">Username</label>
+            <input class="login-input" type="text" placeholder="Username" id="id" autocomplete="off" value="testuser">
+            <label class="login-label" for="password">Password</label>
+            <input class="login-input" type="password" id="password" value="11111">
+            <button class="login-btn" type="submit">Login</button>
+            <div class="flex-container">
+                <a href="#">Sign Up</a>
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div> -->
+<!-- 
+        <H1>개인정보 폼</H1>
+
+        <style>
+            .container{
+                display: grid;
+                grid-template-columns: repeat(6,minmax(0,1fr));
+                gap: 0.5rem;
+            }
+
+            .col-span-2{
+                grid-column-start: span 2;
+            }
+            .col-span-3{
+                grid-column-start: span 3;
+            }
+            .col-span-4{
+                grid-column-start: span 4;
+            }
+            .col-span-6{
+                grid-column-start: span 6;
+            }
+
+            label{
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+
+            input, select{
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0.5rem;
+                border: 1px solid #ddd;
+                border-radius: 0.25rem;
+            }
+        </style>
+
+        
+        <div class="container"> 
+            <div class="col-span-3">
+                <label for="fname">First name</label>
+                <input type="text" id="fname">
+            </div>
+
+            <div class="col-span-3">
+                <label for="lname">Last name</label>
+                <input type="text" id="lname">
+            </div>
+
+            <div class="col-span-4">
+                <label for="email">Email address</label>
+                <input type="text" id="email">
+            </div>
+
+            <div class="col-span-2">
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="mx">Mexico</option>
+                </select>
+            </div>
+
+            <div class="col-span-6">
+                <label for="address">Street address</label>
+                <input type="text" id="address">
+            </div>
+
+            <div class="col-span-2">
+                <label for="city">City</label>
+                <input type="text" id="city">
+            </div>
+
+            <div class="col-span-2">
+                <label for="state">State / Province</label>
+                <input type="text" id="state">
+            </div>
+
+            <div class="col-span-2">
+                <label for="zip">Zip / Postal code</label>
+                <input type="text" id="zip">
+            </div>
+        </div> -->
+
+        <!-- <h1>Option</h1>
+
+        <style>
+            input{
+                display: none;
+            }
+
+            .container{
+                display: inline-grid;
+                grid-template-columns: repeat(3, minmax(0,1fr));
+                gap: 0.5rem;
+            }
+
+            .btn{
+                padding: 0.5rem 1rem;
+                border: 1px solid #ddd;
+                border-radius: 0.5rem;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            input:checked + .btn{
+                background-color: #000;
+                color: #fff;
+            }
+        </style>
+
+        <div class="container">
+            <input type="radio" name="btn" id="4gb">
+            <label for="4gb" class="btn">4GB</label>
+            
+            <input type="radio" name="btn" id="8gb">
+            <label for="8gb" class="btn">8GB</label>
+            
+            <input type="radio" name="btn" id="16gb">
+            <label for="16gb" class="btn">16GB</label>
+            
+            <input type="radio" name="btn" id="32gb">
+            <label for="32gb" class="btn">32GB</label>
+
+            <input type="radio" name="btn" id="64gb">
+            <label for="64gb" class="btn">64GB</label>
+        </div>
+
+ -->
+
+    <!-- <h1>Survey</h1>
+    <p>Which phone do you want to purchase?</p>
+
+    <style>
+
+        input{
+            display: none;
+        }
+
+        .btn{
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            display: block;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input:checked + .btn{
+            outline: auto;
+        }
+    </style>
+
+    <div class="container">
+        <input type="radio" name="btn" id="iphone">
+        <label class="btn" for="iphone">iphone 15 Pro</label>
+        
+        <input type="radio" name="btn" id="galaxy" checked> 
+        <label class="btn" for="galaxy">galaxy S24</label>
+        
+        <input type="radio" name="btn" id="pixel">
+        <label class="btn" for="pixel">Pixel Pro 8</label>
+        
+        <input type="radio" name="btn" id="other">
+        <label class="btn" for="other">Other</label>
+    </div> -->
+
+    <!-- <h1>Color picker</h1>
+
+    <style>
+        input{
+            display: none;
+        }
+
+        .select-color{
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 99px;
+            margin-right: 0.5rem;
+            border: 1px solid #ddd;
+        }
+
+        .white{
+            background: white;
+        }
+
+        .gray{
+            background-color: gray;
+        }
+
+        .black{
+            background-color: black;
+        }
+
+        input:checked + .select-color{
+            outline: 4px solid #eee;
+        }
+        
+    </style>
+    <div>
+        <input type="radio" name="color" id="white" checked>
+        <label class="select-color white" for="white"></label>
+        
+        <input type="radio" name="color" id="gray">
+        <label class="select-color gray" for="gray"></label>
+        
+        <input type="radio" name="color" id="black">
+        <label class="select-color black" for="black"></label>
+    </div>
+     -->
+
+     <!-- <h1>Multiple select</h1>
+     <p>Choose all skills you have</p>
+
+     <style>
+        input{
+            display: none;
+        }
+
+        .option{
+            display: inline-block;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 99px;
+        }
+        
+        .option::before{
+            content: "+ ";
+        }
+
+        input:checked + .option{
+            background-color: #cff;
+        }
+
+        input:checked + .option::before{
+            content: "";
+        }
+     </style>
+
+     <div>
+        <input type="checkbox" name="skill" id="html">
+        <label class="option" for="html">HTML</label>
+
+        <input type="checkbox" name="skill" id="css">
+        <label class="option" for="css">CSS</label>
+
+        <input type="checkbox" name="skill" id="js">
+        <label class="option" for="js">JavaScript</label>
+
+        <input type="checkbox" name="skill" id="react">
+        <label class="option" for="react">React</label>
+     </div> -->
+
+        <!-- <h1>Avatar</h1>
+
+        <style>
+            .container{
+                /* border: 1px dashed; */
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .avater{
+                width: 4rem;
+                height: 4rem;
+                object-fit: cover;
+                border-radius: 99px;
+            }
+            .info{
+                margin-left: 1rem;
+            }
+
+            .username{
+                margin: 0;
+            }
+
+            .full-name{
+                color: #888;
+            }
+        </style>
+
+        <div class="container">
+                <img class="avater" src="../../front/html5/img/cat.jpg" alt="">
+                <div class="info">
+                    <h3 class="username">Cat</h3>
+                    <span class="full-name">Cat</span>
+                </div>
+
+        </div> -->
+
+        <!-- <h1>Card</h1>
+
+        <style>
+            .card{
+                width: 16rem;
+                /* border: 1px dashed; */
+                box-shadow: 5px 5px 10px #ddd, -5px -5px 10px #ddd;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+
+            img{
+                width: inherit;
+            }
+
+            .card-inner{
+                padding: 0 1rem 1rem;
+            }
+
+            .content{
+                color: #888;
+            }
+        </style>
+
+        <div class="card">
+            <img src="../../front/html5/img/cat.jpg" alt="">
+            <div class="card-inner">
+                <h3>Cat</h3>
+                <p class="content">Cat is very cute.</p>
+            </div>
+        </div> -->
+
+        <!-- <h3>Profile</h3>
+        <style>
+            .container{
+                background-color: #cef;
+                height: 150px;
+                /* layout */
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+
+            .avater-img{ 
+                width: 100px;
+                height: 100px;
+                border-radius: 99px;
+                /* position */
+                transform: translateY(25px);
+                border: 1px solid #ddd;
+            }
+
+            .info{
+                margin-top: 50px;
+                text-align: center;
+            }
+
+
+        </style>
+        <div class="container">
+            <img class="avater-img" src="../../front/html5/img/cat2.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>Cat</h3>
+            <p>
+                Cat is cute.
+            </p>
+        </div> -->
+<!-- 
+        <h1>Scalable Image</h1>
+
+        <style>
+            .container{
+                border: 1px solid #ddd;
+                width: 400px;
+                height: 400px;
+                overflow: hidden;
+            }
+
+            img{
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+                /* 애니메이션효과 */
+                transition: transform 0.2s;
+            }
+
+            .container:hover img{
+                transform: scale(1.1);
+            }
+        </style>
+
+        <div class="container">
+            <img src="../../front/html5/img/cat.jpg" alt="">
+        </div> -->
+
+        <!-- <h1>Overlay on Image</h1>
+
+        <style>
+            .container{
+                width: 200px;
+                height: 200px;
+                border: 1px solid #ddd;
+                /* position */
+                position: relative;
+            }
+
+            img{
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
+
+            .overlay{
+                position: absolute;
+                /* 포지션 값을 모두 0으로하면 엘리먼트를 커버한다 */
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0 0 0 / 0.5);
+                color: #fff;
+                /* layout */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* 처음에는 안보이는 상태 */
+                opacity: 0;
+                /* 애니메이션효과*/
+                transition: opacity 0.2s;
+            }
+
+            .container:hover .overlay{
+                opacity: 1;
+            }
+        </style>
+
+        <div  class="container">
+            <img src="../../front/html5/img/cat.jpg" alt="">
+            <div class="overlay">
+                <span>Caption</span>
+            </div>
+        </div> -->
+
+        <!-- <h1>Figure</h1>
+
+        <style>
+            .container{
+                border: 1px solid #ddd;
+                /* size */
+                width: 300px;
+                width: 300px;
+                /* position */
+                position: relative;
+            }
+
+            img{
+                /* size */
+                width: inherit;
+                height: inherit;
+                /* fit */
+                object-fit: cover;
+            }
+
+            .overlay{
+                /* position */
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                /* size */
+                width: inherit;
+                padding: 0 1rem;
+                box-sizing: border-box;
+                /* disign */
+                background-color: rgba(255 255 255 / 0.5);
+                color: #fff;
+            }
+        </style>
+
+        <div class="container">
+            <img src="../../front/html5/img/cat.jpg" alt="">
+            <div class="overlay">
+                <p>Cat is Cute</p>
+            </div>
+        </div> -->
+
+        <!-- <h1>Modal</h1>
+        
+        <style>
+            .overlay{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0 0 0/ 0.2);
+            }
+
+            .modal{
+                width: 20rem;
+                margin: 100px auto 0;
+                background-color: #fff;
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+        </style>
+
+        <div class="overlay">
+            <div class="modal">
+                <h1>Content</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet reprehenderit nemo perspiciatis assumenda debitis? Quisquam, dolorem et. Adipisci nam alias illum numquam aperiam doloremque hic dolorum totam? Laborum, adipisci aliquam?</p>
+            </div>
+        </div> -->
+
+        <!-- <h1>Modal Gallery</h1>
+
+        <style>
+            .overlay{
+                position: fixed;
+                inset: 0;
+                background-color: rgba(0 0 0/ 0.4);
+            }
+
+            .modal{
+                width: 20rem;
+                margin: 100px auto 0;
+                text-align: center;
+                color: white;
+                object-fit: cover;
+            }
+
+            img{
+                width: inherit;
+                border-radius: 1rem;
+            }
+
+        </style>
+        <div class="overlay">
+            <div class="modal">   
+                <img src="../img/tora2.jpg" alt="">
+                <h3>Tora</h3>
+            </div>
+        </div> -->
+
+        <!-- <h1>Table</h1>
+
+        <style>
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                /* 모든 열이 같은 넓이를 가진다 */
+                table-layout: fixed;
+            }
+
+            th{
+                text-align: left;
+            }
+
+            thead tr{
+                border-bottom: 1px solid;
+            }
+
+            th, td{
+                padding: 0.5rem;
+            }
+
+            tr td:nth-child(1){
+                font-weight: 600;
+            }
+
+            tbody tr:nth-child(odd){
+                background-color: #eee;
+            }
+
+            
+        </style>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</td>
+                    <th>Name</td>
+                    <th>Origin</td>
+                    <th>Available</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>K</td>
+                    <td>Ireland</td>
+                    <td>No</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>J</td>
+                    <td>Netherlands</td>
+                    <td>Yes</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>L</td>
+                    <td>USA</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <!-- <h1>Comparison Table</h1>
+
+        <style>
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                table-layout: fixed;
+                text-align: center;
+            }
+
+            thead{
+                background-color: #333;
+                color: #fff;
+            }
+
+            th, td{
+                padding: 1rem;
+            }
+
+            td{
+                border-bottom: 1px solid #ddd;
+            }
+
+            tr th:nth-child(1),
+            tr td:nth-child(1){
+                font-weight: 600;
+                text-align: left;
+            }
+        </style>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>galaxy S24</th>
+                    <th>iPhone 15</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>RAM</td>
+                    <td>8GB</td>
+                    <td>6GB</td>
+                </tr>
+
+                <tr>
+                    <td>Refresh Rate</td>
+                    <td>128hz</td>
+                    <td>60hz</td>
+                </tr>
+
+                <tr>
+                    <td>Battery</td>
+                    <td>4000mAh</td>
+                    <td>3349mAh</td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <!-- <h1>Spinner</h1>
+
+        <style>
+            #spinner{
+                width: 50px;
+                height: 50px;
+                border: 5px solid #333;
+                border-top: 5px solid transparent;
+                border-radius: 99px;
+                
+                /* 애니메이션 적용 */
+                animation-name: spin;
+                animation-duration: 1.5;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            /* 애니메이션 정의 */
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+        <div id="spinner"></div> -->
+
+        <h1>Pulse</h1>
+<!-- 
+        <style>
+            .container{
+                position: relative;
+                height: 100px;
+            }
+
+            #inner,
+            #pulse{
+                margin-left: 2rem;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border: 1px solid red;
+                background-color: red;
+                border-radius: 99px;
+
+            }
+
+            #pulse{
+                animation-name: pulse;
+                animation-duration: 0.8s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease;
+            }
+        
+            @keyframes pulse {
+                from {
+                    transform: scale(1.1);
+                    opacity: 0.5;
+                }
+                to {
+                    transform: scale(1.7);
+                    opacity: 0;
+                }
+            }
+        </style>
+        <div class="container">
+            <div id="inner"></div>
+            <div id="pulse"></div>
+        </div> -->
+
+        <style>
+            #heart{
+                /* layout */
+                margin: 2rem;
+                /* size */
+                width: 40px;
+                height: 40px;
+                /* design */
+                background-color: #f00;
+                border-radius: 99px;
+                /* animation */
+                animation: pulse 0.8s infinite;
+            }
+
+            @keyframes pulse {
+                from{
+                    outline: 0px solid rgba(255 0 0 / 0.8);
+                }to{
+                    outline: 20px solid rgba(255 0 0 / 0);
+                }
+            }
+        </style>
+        
+        <div id="heart"></div>
+</body>
+</html>

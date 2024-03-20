@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습5</title>
+    <style>
+        .nav li{
+            display: inline-block;
+            width: 80px;
+            text-align: center;
+            border: 1px solid;
+        }
+
+        .nav a,
+        .nav a:link,
+        .nav a:visited,
+        .nav a:hover,
+        .nav a:active,
+        .nav a:hover{
+            text-decoration: none;
+            color: black;
+        }
+
+        .my-table{
+            border-collapse: collapse;
+        }
+
+        .my-table td{
+            border: 1px solid;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <ul class="nav">
+            <li><a href="#">first</a></li>
+            <li><a href="#">second</a></li>
+            <li><a href="#">third</a></li>
+            <li><a href="#">fourth</a></li>
+        </ul>
+    </div>
+
+    <div class="component-table">
+        <table class="my-table">
+            <tr>
+                <td>first</td>
+                <td>second</td>
+                <td>third</td>
+            </tr>
+            <tr>
+                <td>first</td>
+                <td>second</td>
+                <td>third</td>
+            </tr>
+            <tr>
+                <td>first</td>
+                <td colspan="2">second</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

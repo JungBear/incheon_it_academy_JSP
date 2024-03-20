@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+}
+
+div, textarea{
+    box-sizing: border-box;
+    min-width: 400px;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.component-header h1{
+    float: left;
+    margin-left: 37%;
+    color: #03C75A;
+}
+
+.component-signup{
+    margin: auto;
+    width: 30%;
+    padding: 30px;
+}
+
+.component-signup input,
+.component-signup select{
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 15px; 
+}
+.component-signup input:hover,
+.component-signup input:focus,
+.component-signup input:active{
+    border: 2px solid #03C75A;
+    outline: none;
+}
+
+
+.real-authentication label, .real-authentication input {
+    display: inline-block;
+}
+
+.real-authentication input{
+    float: right;
+    width: 3%;
+} 
+
+.real-authentication label{
+    float: right;
+    font-size: 13px;
+}
+
+
+.Signup-submit{
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+}
+
+.gender{
+    border: 1px solid black;
+}
+
+.gender input{
+    margin-left: 2%;
+    width: 30%;
+    display: inline-block;
+}
+
+.Signup-submit input{
+    color: white;
+    background-color: #03C75A;
+    border: #03C75A;
+}

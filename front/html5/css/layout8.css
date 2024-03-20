@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+}
+
+div, textarea{
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+.div-nav {
+    border-bottom: 1px solid red;
+    width: 500px;
+    margin-bottom: 10px;
+    
+}
+
+
+.nav li{
+    display: inline-block;
+    width: 60px;
+    background-color: violet;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:focus{
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover{
+    text-decoration: none;
+    color:green;
+}
+
+.back-img
+{
+    background-image: url(../img/coffee.jpg);
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    /* 이미지의 시작이 중앙부터 시작 */
+}
+
+.img-info{
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 30%;
+    left: 10%;
+}
+
+.img-title
+{   
+    color: #13362D;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 0px;
+    
+}
+
+.img-second-title{
+    font-size: 60px;
+    margin-top: 0; /* 기본적인 margin 초기화 */
+    margin-bottom: 0px; 
+    color: #659950;
+}
+
+
+.img-content
+{
+    color: #13362D;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 0; /* 기본적인 margin 초기화 */
+    margin-bottom: 10px; /* 간격을 줄임 */
+}
+
+.img-button
+{   color: red;
+    border: 1px solid red;
+    position: absolute;
+    left: 30%;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.img-button:hover{
+    color: black;
+    background-color: wheat;
+    text-decoration: underline;
+    border: 1px solid violet ;
+}
+
+.target
+{   
+    background-color: gray;
+    position: relative;
+    left: 35%;
+    top: -20px;
+}
+
+.input-class{
+    width: 200px;
+}
+
+.input-class input{
+    box-sizing: border-box;
+}
+
+.input-class input[type=text],
+.input-class input[type=number]{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid violet;
+    border-radius: 15px;
+}
+
+.my-table{
+    border-collapse: collapse;
+}
+
+.my-table tr td{
+    border: 1px solid black;
+    width: 200px;
+}

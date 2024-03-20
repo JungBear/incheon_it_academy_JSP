@@ -1,0 +1,985 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+div, textarea{
+    box-sizing: border-box;
+}
+
+li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+.nav-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(246, 245, 239);
+    position: fixed;
+    z-index: 5;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 1100px;
+    flex-wrap: nowrap;
+}
+
+.logo{
+    margin: auto;
+    float: left;
+}
+
+.inner{
+    margin-bottom: 40px;
+    height: 20px;
+}
+
+.inner ul{
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.inner li {
+    display: inline-block;
+    position: relative; /* 부모 요소를 기준으로 자식 요소를 배치하기 위해 position: relative;를 추가합니다. */
+    opacity: 0.7;
+}
+
+
+
+
+.inner li:not(:last-child):after {
+    content: "";
+    position: absolute; /* 선을 li 요소의 내부에 절대 위치시킵니다. */
+    left: 100%; /* 선의 시작점을 li 요소의 오른쪽 끝으로 설정합니다. */
+    width: 1px; /* 선의 너비 */
+    top: 20px;
+    height: 30%; /* 선의 높이를 li 요소의 높이의 절반으로 설정합니다. */
+    background-color: gray; /* 선의 색상 */
+    opacity: 0.1;
+}
+
+.inner li:hover{
+    text-decoration: underline;
+}
+
+.nav .nav-content
+{
+    font-size: 0.8rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+#search-form{
+    width: 100px;
+    opacity: 1;
+    border: none;
+    font-size: 12px;
+    padding: 0 0.25rem;
+}
+
+.search-input{
+    border: none;
+    width: 110px;
+    transition: all 0.5s;
+}
+
+.search-input.hidden,
+#search-form.hidden
+{
+    opacity: 0;
+    width: 0px;
+    visibility: hidden;
+}
+
+
+.inner .nav-btn{
+    width: 34px;
+    height: 34px;
+    margin-top: 10px;
+    margin-right: 53px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* justify-content: space-between; */
+    transition: all 0.5s;
+    
+}
+
+.inner .width-150{
+    width: 150px;
+}
+
+.nav-btn img{
+    position: absolute;
+    right: 55px;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.nav-nav ul{
+    margin-bottom: 0
+}
+
+/* .nav-nav .nav-content{
+    height: 40px;
+} */
+
+.nav .nav-content .nav-menu{
+    position: relative;
+    display: block;
+    width: inherit;
+    height: inherit;
+    padding: 20px 20px 30px 20px;
+}
+
+.nav .nav-content .nav-menu,
+.nav .nav-content .nav-menu:visited
+/* a태그의 기본상태, a태그를 방문한 후 */
+{
+    color: #555555;
+}
+
+.nav-nav .nav-content:hover
+/* li영역에 마우스를 올려두었을 때 li의 색을 darkgreen의 색으로 밑줄을 주고싶다 */
+{
+    color: darkgreen;
+    background-color: #333;
+    text-decoration: underline;
+    
+}
+
+.nav-nav .nav-content:hover .nav-menu
+/* li영역에 마우스가 들어왔을때 글자의 색을 darkgreen으로 바꾼다 */
+{
+    color: #669900;
+}
+
+
+.dropdown{
+    position: absolute;
+    top: 127.33px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+}
+
+.dropdown-inner{
+    width: 100;
+    margin: 0 auto;
+    background-color: transparent; 
+    text-align: left;
+    height: 240px;
+    visibility: hidden;
+    opacity: 0;
+
+    /* display */
+    display: flex;
+    justify-content: center;
+}
+
+
+.dropdown-inner ul{
+    width: 170px;
+    height: 240px;
+}
+
+.dropdown-inner ul li{
+    margin-bottom: 5px;
+}
+
+.dropdown-inner ul li a{
+    color: #999;
+    font: 12px;
+}
+
+.dropdown-inner a:visited{
+    color: #999;
+
+}
+
+.dropdown-inner .dropdown-title{
+    font-weight: normal;
+    font-size : 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dropdown-title a:visited{
+    color: #fff;
+}
+
+.nav-nav .nav-content:hover .dropdown,
+.nav-nav .nav-content:hover .dropdown-inner,
+.dropdown-inner:hover .dropdown-inner{
+    height: 300px;
+    visibility: visible;
+    opacity: 1;
+    transition: height 0.5s, opacity 1.5s;
+}
+
+.dropdown .dropdown-inner ul li a:hover{
+    text-decoration: underline;
+}
+
+.float{
+    height: 127px;
+    background-color: #fff ;
+}
+
+.section-1
+{
+    background-image: url(../img/section1-background.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 32vw;
+    background-repeat: no-repeat;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.text-img{
+    position: absolute;
+    width: 20%;
+    top: 20%;
+    left: 10%;
+}
+
+.detail-button
+{   color: #13362D;
+    border: 2px solid #13362D;
+    position: absolute;
+    top: 65%;
+    left: 16%;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.detail-button:hover{
+    color: white;
+    background-color: #13362D;
+    text-decoration: underline;
+}
+
+.section-1 .white-taro-ratte{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 20%;
+    /* 자바스크립트 애니메이션을 위해 투명도 0 */
+    opacity: 0;
+}
+
+.section-1 .jamong-tea{
+    position: absolute;
+    top: 56%;
+    left: 46%;
+    width: 20%;
+    /* 자바스크립트 애니메이션을 위해 투명도 0 */
+    opacity: 0;
+}
+
+.section-1 .cookie-ratte{
+    position: absolute;
+    top: 13%;
+    left: 60%;
+    width: 20%;
+    /* 자바스크립트 애니메이션을 위해 투명도 0 */
+    opacity: 0;
+}
+
+.section-notice{
+    box-sizing: border-box;
+    margin: 0;
+    height: 62px;
+}
+
+.section-notice .notice-left{
+    margin: 0;
+    padding: 0;
+    height: 62px;
+    width: 50%;
+    box-sizing: border-box;
+    background-color: #000;
+    position: absolute;
+    color: #fff;
+}
+
+.section-notice .notice-left-inner{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 70%;
+    margin-left: 30%;
+}
+
+.section-notice .notice-left-inner-ul{
+    width: 80%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.section-notice .notice-left-inner-ul .notice-left-li:nth-child(n+2){
+    display: none;
+}
+
+.section-notice .notice-left-li:hover .notice-left-link{
+    text-decoration: underline;
+}
+
+.section-notice .notice-left-li:hover .notice-left-link,
+.section-notice .notice-left-link:visited
+{
+    color: #fff;
+}
+
+.btn-notice-plus{
+    width: 36px;
+    height: 36px;
+}
+
+.notice-left-link{
+    width: inherit;
+}
+
+.notice-right{
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 50px;
+}
+
+.notice-right-inner{
+    height: 62px;
+    margin-left: 15%;
+}
+
+.notice-right-link {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+
+.notice-right-link .btn-prom-down {
+    margin-left: 10px; /* 버튼과 단락 사이에 여백을 추가합니다. */
+}
+
+.btn-prom-down {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.pro-check {
+    display: none;
+}
+
+.section-notice a:hover .notice-right-link,
+.section-notice a:visited {
+    color: #000;
+}
+
+.section-rewords{
+    position: relative;
+    padding: 1% 0;
+    margin: 0;
+    background-color: #1e3932;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: #fff;
+}
+
+
+.rewords-img{
+    width: 176px;
+    /* object-fit: cover; */
+}
+
+.rewords-info{
+    margin-left: 2.5rem;
+    width: 80%;
+    max-width: 1100px;
+}
+
+.rewords-info h2{
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.login-rewords{
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255,0.2);
+    font-size: 17px;
+}
+
+.gift-card{
+    font-size: 14px;
+}
+
+.rewords-btn{
+    position: absolute;
+    /* display: inline-block; */
+    right: 20px;
+    bottom: 30px;
+}
+
+.rewords-sign-up,
+.rewords-login{
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+}
+
+.rewords-sign-up{
+    border:  2px solid #00704a;
+    background-color: #00704a;
+}
+
+.rewords-login{
+    background-color: inherit;
+    border: 2px solid #fff;
+}
+
+.rewords-btn a:visited{   
+    color: #fff;
+}
+
+.rewords-sign-up:hover,
+.rewords-login:hover{
+    text-decoration: underline;
+}
+
+
+.section-2{
+    width: 100%;
+    height: 500px;
+    /* background */
+    background: url(../img/section_2_bg.jpg) center /cover no-repeat;
+    object-fit: cover;
+    padding-top: 20px;
+}
+
+.section-2-inner{
+    width: 400px;
+    min-width: 600px;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spring-blend-img {
+    width: 100%;
+    height: 450px;
+    margin-right: 100px;
+    opacity: 0; /* 초기에 투명하게 설정 */
+    transform: translateX(-500px); /* 왼쪽으로 이동한 상태로 시작 */
+    transition: opacity 2s, transform 2s; /* 애니메이션 지속 시간 설정 */
+}
+
+
+.spring-blend-inner{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: inherit;
+    /* 애니메이션 설정 */
+    opacity: 0; /* 초기에 투명하게 설정 */
+    transform: translateX(500px); /* 오른쪽으로 이동한 상태로 시작 */
+    transition: opacity 2s, transform 2s; /* 애니메이션 지속 시간 설정 */
+}
+
+.spring-blend-img.show {
+    opacity: 1; /* 이미지를 보이도록 설정 */
+    transform: translateX(0); /* 이미지를 이동시키지 않고 초기 위치로 이동 */
+}
+
+.spring-blend-inner.show {
+    opacity: 1; /* 이미지를 보이도록 설정 */
+    transform: translateX(0); /* 이미지를 이동시키지 않고 초기 위치로 이동 */
+}
+
+.spring-blend-btn{
+    padding: 0.5rem 1.5rem;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background: inherit;
+    text-align: center;
+    border: 2px solid #91674a;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.spring-blend-btn:visited{
+    color: #91674a;
+}
+
+.spring-blend-btn:hover{
+    background-color: #91674a;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.section-3{
+    background: url(../img/section_3_bg.jpg) center /cover no-repeat;
+    width: 100%;
+    height: 400px;
+    /* position */
+    position: relative;
+}
+
+.section-3-reverse-title{
+    width: 1080px;
+    min-width: 600px;
+    /* position */
+    margin: auto;
+    text-align: center;
+    padding-top: 70px;
+    transform: translateX(-15%);
+}
+
+.section-3-reverse-btn{
+    margin-top: 40px;
+    text-align: center;
+    transform: translateX(-10%);
+}
+
+.section-3-reverse-btn a{
+    border: 2px solid #b87643;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.section-3-reverse-btn a:visited{
+    color: #b87643;
+}
+
+.section-3-reverse-btn a:hover{
+    background-color: #b87643;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.section-3-reverse-img{
+    position: absolute;
+    height: 400px;
+    top: 0;
+    left: 950px;
+    opacity: 0;
+
+    transition: opacity 1s;
+}
+
+.section-3-reverse-img.show {
+    opacity: 1; /* 이미지를 보이도록 설정 */
+}
+
+.section-4{
+    background: url(../img/section_4_bg.jpg) center center fixed no-repeat #45434c;
+    background-size: auto 100%;
+    box-sizing: border-box;
+    height: 800px;
+    padding: 0;
+    margin: 0;
+    /* display */
+    display: flex;
+    justify-content: center;
+}
+
+.section-4-inner{
+    width: 70%;
+    height: 800px;
+    
+/* 
+    position */
+    position: relative;
+
+}
+
+.section-4-txt1,
+.section-4-txt2{
+    opacity: 0;
+    transform: translateX(-600px);
+}
+
+.section-4-txt1{
+    /* position */
+    position: absolute;
+    top: 150px;
+    left: 83px;
+    transition: all 3.5s;
+}
+
+.section-4-txt2{
+    /* position */
+    position: absolute;
+    top: 390px;
+    left: -21px;
+    transition: all 4s;
+}
+
+.section-4-btn{
+    /* position */
+    position: absolute;
+    top: 570px;
+    left: 219px;
+    padding: 0.5rem 1.5rem;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background: inherit;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    /* animation */
+    opacity: 0;
+    transition: all 1s;
+}
+
+.section-4-btn:visited{
+    color: #fff;
+}
+
+.section-4 .section-4-txt.show .section-4-txt1,
+.section-4 .section-4-txt.show .section-4-txt2,
+.section-4 .section-4-txt.show .section-4-btn
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section-4-btn:hover{
+    background-color: #fff;
+    color: #000;
+    text-decoration: underline;
+}
+
+.section-4-img{
+    /* position */
+    position: absolute;
+    right: -150px;
+    top: 110px;
+}
+
+.section-4-img{
+    /* position */
+    position: absolute;
+    right: -150px;
+    top: 110px;
+    /* animation */
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+.section-4-img.show{
+    /* position */
+    opacity: 1;
+}
+
+.section-5{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.section-5-reserve-title{
+    margin: 0 auto;
+    height: 231px;
+    max-width: 1100px;
+    /* display */
+    position: relative;
+    z-index: 2;
+    padding-right: 200px; 
+    padding-top: 135px;
+    padding-left: 55px;
+}
+
+.section-5-reserve-title img{
+    transform: translateX(185px);
+}
+
+.section-5-reserve-img{
+    position: absolute;
+    margin-right: -483px;
+    top: 0;
+    right:  50%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.section-5-reserve-img.show{
+    opacity: 1;
+}
+
+.section-5-reverse-btn{
+    width: 500px;
+    height: auto;
+    margin: auto;
+}
+
+.section-5-reverse-btn a{
+    display: block;
+    /* position */
+    position: absolute;
+    top: 250px;
+    left: 25%;
+    padding: 0.5rem 1.5rem;
+    margin-left: 220px;
+    font-size: 14px;
+    font-weight: 600;
+    background: inherit;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    /* animation */
+    transition: all 0.5s;
+}
+
+.section-5-reverse-btn a:visited{
+    color: #000;
+}
+
+.section-5-reverse-btn a:hover{
+    background-color: #000;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.section-6{
+    height: 400px;
+    background: url(../img/section6_store_bg.jpg);
+    overflow: hidden;
+}
+
+.section-6-inner{
+    width: 1280px;
+    margin: auto;
+    /* position */
+    position: relative;
+}
+
+.section-6-store-img1{
+    position: absolute;
+    left: 390px;
+    top: 159px;
+    z-index: 4;
+}
+
+.section-6-store-img2{
+    position: absolute;
+    left: 160px;
+    top: 0px;
+    z-index: 3;
+}
+
+.section-6-store-img3{
+    position: absolute;
+    left: 520px;
+    top: -60px;
+}
+
+.section-6-store-img4{
+    position: absolute;
+    top: 298px;
+    right: 30px;
+}
+
+.section-6-store-txt1{
+    position: absolute;
+    right: 162px;
+    top: 100px;
+}
+
+.section-6-store-txt2{
+    position: absolute;
+    right: 162px;
+    top: 168px;
+}
+
+.section-6-store-btn{
+    display: block;
+    /* position */
+    position: absolute;
+    top: 290px;
+    right: 408px;
+    padding: 0.5rem 1.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    background: inherit;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    /* animation */
+    transition: all 0.5s;
+}
+
+.section-6-store-btn:visited{
+    color: #000;
+}
+
+.section-6-store-btn:hover{
+    background-color: #000;
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer{
+    width: 100%;
+    height: 625px;
+    padding: 32px 0 35px 0;
+    background-color: #2C2A29;
+}
+
+.footer-menus{
+    width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+@media (max-width : 1300px) {
+    .footer-menus{
+        width: 700px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+}
+
+.footer-menus a:visited{
+    color: #fff;
+}
+
+.footer-menus a:hover{
+    text-decoration: underline;
+}
+
+.footer-menus ul li{
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.footer-menus .footer-menu-title{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.footer-awards{
+    width: 1300px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 20px;
+
+    display: flex;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+@media (max-width : 1300px) {
+    .footer-awards{
+        width: 700px;
+        height: 100px;
+        margin: auto;
+        margin-top: 50px;
+        padding-top: 20px;
+    
+        display: flex;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.footer-awards li{
+    display: inline-block;
+}
+
+.copyright-link{
+    width: 1300px;
+    margin: auto;
+    font-size: 12px;
+}
+
+.copyright-link li{
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+    color: #cccccc;
+}
+
+.copyright-link li:not(:last-child):after {
+    content: "";
+    position: absolute; /* 선을 li 요소의 내부에 절대 위치시킵니다. */
+    left: 102%; /* 선의 시작점을 li 요소의 오른쪽 끝으로 설정합니다. */
+    width: 1px; /* 선의 너비 */
+    height:100%; /* 선의 높이를 li 요소의 높이의 절반으로 설정합니다. */
+    background-color: #cccccc; /* 선의 색상 */
+    opacity: 0.3;
+}
+
+.copyright-link a:visited{
+    color: #cccccc;
+}
+
+.copyright-link .color-green:visited{
+    color: #00b050;
+}
+
+.copyright-wrap-btn{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.copyright-btn{
+    display: inline-block;
+    width: 90px;
+    padding: 7px 10px;
+    font-size: 12px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.copyright-btn:visited{
+    color: #fff;
+}
+
+.copyright-btn:hover{
+    text-decoration: underline #fff;
+}

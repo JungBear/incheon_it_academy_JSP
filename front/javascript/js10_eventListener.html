@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수복습</title>
+    <style>
+        .box-class{
+            background-color: yellowgreen;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-class" id="box-id">
+        <p id="box-text">버튼 누르면 열림</p>
+        <button onclick="닫기()">닫기</button>
+    </div>
+    <button onclick="열기('아이디')">열기</button>
+    <button onclick="열기('비밀번호')">열기2</button>
+
+    <script>
+
+        function 열기(text){
+            document.querySelector("#box-id p").innerHTML =  text + "를 입력하세요";
+            document.querySelector("#box-id").style.display = "block";
+        }
+
+        function 닫기(){
+            document.getElementById("box-id").style.display = "none";
+        }
+
+        document.getElementById("box-id").addEventListener('click', function(){
+            document.getElementById("box-text").style.color = "red";
+            document.getElementById("box-text").style.fontSize = '30px';
+        })
+
+        document.getElementById("box-id").addEventListener("mouseover", function(){
+            document.getElementById("box-id").style.backgroundColor = "green";
+        })
+
+        document.getElementById("box-id").addEventListener("mouseleave",function(){
+            document.getElementById("box-id").style.backgroundColor = "yellowgreen";
+        })
+
+        document.getElementById("box-id").addEventListener('mousedown',function(){
+            document.getElementById("box-id").style.backgroundColor = "darkgreen"
+        })
+
+        document.getElementById("box-id").addEventListener('mouseup', function(){
+            document.getElementById("box-id").style.backgroundColor = "green"
+        })
+
+    </script>
+</body>
+</html>

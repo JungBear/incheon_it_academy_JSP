@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<style> 
+    .show-box{
+        background-color: skyblue;
+        padding: 15px;
+        border-radius: 15px;
+        color: white;
+        display: none;
+    }
+
+</style>
+
+<body>
+
+    <div class="show-box" id="my-box">
+        <p>버튼을 누르면 열리는 창</p>
+        <button onclick="닫기()">닫기</button>
+    </div> 
+    <button onclick="열기()">버튼</button>
+
+    <script>
+
+        function 열기(){
+            document.getElementById("my-box").style.display = "block"
+        }
+
+        function 닫기(){
+            document.getElementById("my-box").style.display = "none"
+        }
+
+    </script>
+
+</body>
+</html>

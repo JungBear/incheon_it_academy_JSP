@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드</title>
+</head>
+<body>
+    <style>
+
+        #container{
+            background-color: #fff;
+        }
+
+        .logo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #btn{
+            width: 100px;
+            padding: 0.5rem 0.75rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        label{
+            display: block;
+        }
+
+        .darkmode{
+            filter: invert(100%);
+        }
+        
+        .warning{
+            color: red;
+        }
+
+        .success{
+            color: lightgreen;
+        }
+
+    </style>
+
+    <div id="container">
+        <div class="logo">
+            <h3>JavaScript</h3>
+            <button id="btn">다크 모드</button>
+        </div>
+    
+        <div>
+            <form>
+                <label for="q1">올해 년도는?</label>
+                <input type="text" id="q1">
+                <input type="button" id="submit-btn" value="제출">
+            </form>
+            <p id="message"></p>
+        </div>
+    </div>
+
+
+    <script>
+        var container = document.getElementById('container');
+        var btn = document.getElementById('btn');
+        var isDarkmode = false;
+
+        btn.addEventListener('click', function(){
+            if(!isDarkmode){
+                container.classList.add('darkmode');
+                isDarkmode = true;
+                btn.textContent = `라이트 모드`;
+            }else{
+                container.classList.remove('darkmode');
+                isDarkmode = false;
+                btn.textContent = `다크 모드`;
+            }
+            
+        })
+
+        var message = document.getElementById('message');
+        var submitiBtn = document.getElementById('submit-btn');
+        var inputValue = document.getElementById('q1').value;
+        
+        submitiBtn.addEventListener('click', function(){
+            // console.log(inputValue);
+            if(inputValue === "2024"){
+                message.classList.add('success');
+                message.innerText = "정답입니다";
+                // alert("정답입니다");
+            }else{
+                message.classList.add('warning');
+                message.innerText = "오답입니다";
+                // alert("오답입니다");
+            }
+        })
+
+    </script>
+
+</body>
+</html>

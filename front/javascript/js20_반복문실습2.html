@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이더</title>
+</head>
+<body>
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .slider-container{
+            overflow: hidden;
+            width: 400px;
+            height: 200px;
+            
+        }
+
+        #slider-img{
+            display: flex;
+            width:300%;
+            transition: all 1s;
+        }
+
+        .box{
+            width: 100%;
+        }
+
+        .box img{
+            width: 100%;
+        }
+
+        .slider-1{
+            margin-left: 0;
+        }
+
+        .slider-2{
+            margin-left: -100%;
+        }
+
+        .slider-3{
+            margin-left: -200%;
+        }
+
+    </style>
+
+    <div class="slider-container">
+        <div id="slider-img" class="">
+            <div class="box">
+                <img src="./img/bg1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./img/bg2.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./img/bg3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <button class="btn" id="btn-1">1</button>
+    <button class="btn" id="btn-2">2</button>
+    <button class="btn" id="btn-3">3</button>
+
+    <script>
+        var btns = document.querySelectorAll('.btn');
+        // var sliderImg = document.getElementById('slider-img');
+        // for(var i = 0; i < btns.length; i++){
+        //     btns[i].addEventListener('click', handleClick);
+        // }
+
+        // function handleClick(e){
+        //     let eventTarget = e.target;
+        //     // console.log(eventTarget.textContent);
+        //     switch(eventTarget.textContent){
+        //         case "1":
+        //             // console.log("1작동");
+        //             sliderImg.className ='';
+        //             sliderImg.classList.add('slider-1');
+        //             break;
+        //         case "2": 
+        //             // console.log("2작동");
+        //             sliderImg.className ='';
+        //             sliderImg.classList.add('slider-2');
+        //             break;
+        //         case "3": 
+        //             // console.log("3작동");
+        //             sliderImg.className ='';
+        //             sliderImg.classList.add('slider-3');
+        //             break;
+        //         default:
+        //             sliderImg.className ='';
+        //     }
+        // }
+
+
+        // ----------------------------------------------
+
+        for(let i = 1; i<btns.length+1; i++){
+            document.querySelector(`#btn-${i}`).addEventListener('click',function(){
+                document.getElementById('slider-img').classList.remove('slider-1','slider-2','slider-3');
+                document.getElementById('slider-img').classList.add(`slider-${i}`);
+            })
+        }
+
+        
+
+        // var time = 0;
+        // var boxs = document.getElementsByClassName('box');
+        // setInterval(function(){
+        //     console.log(time);
+        //     time ++;
+        //     // for(var i = 0; i<boxs.length+1; i++){
+        //     //     sliderImg.classList.add(`slider-${i}`);
+        //     //     console.log(i);
+        //     // }
+        //     // sliderImg.className ='';
+        //     switch(time%3){
+        //         case 0:
+        //             sliderImg.className ='';
+        //             sliderImg.classList.add('slider-1');
+        //             break;
+        //         case 1:
+        //             sliderImg.className ='';
+        //             sliderImg.classList.add('slider-2');
+        //             break;
+        //         case 2:
+        //             sliderImg.className ='';
+        //             sliderImg.classList.add('slider-3');
+        //             break;
+        //     }
+        // },1000)
+
+
+
+    </script>
+
+
+</body>
+</html>

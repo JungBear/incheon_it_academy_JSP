@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+        .top-nav{
+            display: flex;
+            background-color: lightgray;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .top-nav ul{
+            list-style: none;
+        }
+
+        .top-nav li{
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .down-nav{
+            height: 200px;
+            background-color: black;
+            color: #fff;
+            box-sizing: border-box;
+            z-index: 5;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .down-nav h3{
+            margin: 0;
+            margin-top: 0.5rem;
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .down-nav ul{
+            margin-top: 1.5rem;
+            padding: 0;
+        }
+        
+        .down-first, .down-sec{
+            width: 30%;
+            display: inline-block;
+
+        }
+        .down-first li,
+        .down-sec li{
+            margin-bottom: 0.5rem;
+            list-style: none;
+        }
+
+        .section-1{
+            height: 100px;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <h2 class="top-logo" id="top-logo">로고</h2>
+        <ul>
+            <li id="nav-coffee">커피</li>
+            <li id="nav-ratte">라떼</li>
+            <li>주스</li>
+            <li>티</li>
+        </ul>
+    </div>
+
+    <div class="down-nav" id="down-nav">
+        <div class="down-first" id="down-first">
+            <h3>커피</h3>
+            <ul>
+                <li>아메리카노</li>
+                <li>콜드브루</li>
+            </ul>
+        </div>
+        <div class="down-sec" id="down-sec">
+            <h3>라떼</h3>
+            <ul>
+                <li>카페라떼</li>
+                <li>콜드브루라떼</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-1">
+
+    </div>
+
+
+    <script>        
+        var downNavFlag = 0;
+
+        document.getElementById("top-logo").addEventListener("click",function(){
+            if(downNavFlag === 0){
+                downNavFlag = 1
+                document.getElementById("down-nav").style.height = "auto"
+                document.getElementById("down-nav").style.visibility = "visible"
+            }else{
+                downNavFlag = 0
+                document.getElementById("down-nav").style.height = 0
+                document.getElementById("down-nav").style.visibility = "hidden"
+            }
+
+        })
+        
+
+    </script>
+</body>
+</html>
