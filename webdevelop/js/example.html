@@ -1588,8 +1588,8 @@
             items[idx].classList.add('hidden');
         }
     </script> -->
-
-    <!-- <style>
+<!-- 
+    <style>
         input{
             display: none;
         }
@@ -1639,26 +1639,11 @@
             for(var i = 0; i<items.length; i++){
                 if(filter == "all"){
                     items[i].classList.remove('hidden');
-                }else if(filter == 'kr'){
-                    if(items[i].classList.contains('kr')){
-                        items[i].classList.remove('hidden');
-                    }else{
-                        items[i].classList.add('hidden');
-                    }
-                }else if(filter == 'jp'){
-                    if(items[i].classList.contains('jp')){
-                        items[i].classList.remove('hidden');
-                    }else{
-                        items[i].classList.add('hidden');
-                    }
+                }else if(items[i].classList.contains(filter)){
+                    items[i].classList.remove('hidden');
                 }else{
-                    if(items[i].classList.contains('se')){
-                        items[i].classList.remove('hidden');
-                    }else{
-                        items[i].classList.add('hidden');
-                    }
+                    items[i].classList.add('hidden');
                 }
-                
             }
         }
 
@@ -1708,11 +1693,14 @@
         var texts = document.querySelectorAll('.text');
         function f(filter){
             for(var i = 0 ; i< texts.length; i++){
-                if(texts[i].classList.contains(filter)){
-                    texts[i].classList.remove('hidden');
-                }else{
-                    texts[i].classList.add('hidden');
-                }
+                texts[i].classList.contains(filter) ? texts[i].classList.remove('hidden') 
+                    : texts[i].classList.add('hidden');
+                
+                // if(texts[i].classList.contains(filter)){
+                //     texts[i].classList.remove('hidden');
+                // }else{
+                //     texts[i].classList.add('hidden');
+                // }
             }
         }
     </script> -->
