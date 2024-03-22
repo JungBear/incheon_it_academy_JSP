@@ -4,6 +4,7 @@ public class Ex2_valueType {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		byte bNum = 123;
 		int num = 1234;
 		short shortNum = 12;
 		long lNum = 123;
