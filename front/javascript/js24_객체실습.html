@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .product-container{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+
+        .product{
+            border: 1px solid #000;
+        }
+
+        .product-content{
+            border-top: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        img{
+            height: 200px;
+        }
+
+        .product-content{
+            padding: 0.5rem;
+        }
+
+        button{
+            padding: 0.5rem 0.75rem;
+            border: none;
+            background-color: purple;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+
+    </style>
+
+    <div class="product-container">
+        <div class="product">
+            <img src="../../webdevelop/img/tora.jpg" alt="">
+            <div class="product-content">
+                <h3>상품명</h3>
+                <p>가격 : 0000 원</p>
+                <button>결제하기</button>
+            </div>
+        </div>
+        
+        <div class="product">
+            <img src="../../webdevelop/img/tora2.jpg" alt="">
+            <div class="product-content">
+                <h3>상품명</h3>
+                <p>가격 : 0000 원</p>
+                <button>결제하기</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="../../webdevelop/img/tora3.jpg" alt="">
+            <div class="product-content">
+                <h3>상품명</h3>
+                <p>가격 : 0000 원</p>
+                <button>결제하기</button>
+            </div>
+        </div>
+    </div>
+    <div class="count-menu">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <p id="final-price">총 금액 : 0 원</p>
+
+    <script>
+    
+        var productInfo = [
+            {'상품명':'아메리카노', '가격':3000},
+            {'상품명':'카페라떼', '가격':4500},
+            {'상품명':'주스', '가격':4000}
+        ]
+
+        var productCount = document.querySelectorAll('.product').length;
+
+        for(let i = 0; i < productCount; i++){
+            document.querySelectorAll('.product-content h3')[i].innerHTML = productInfo[i]['상품명'];
+            document.querySelectorAll('.product-content p')[i].innerHTML = '가격 : ' + productInfo[i]['가격'] + ' 원';
+        }
+
+        var menuCount = 
+        {
+            "menu" : 
+            [
+                "아메리카노",
+                "카페라떼",
+                '주스'
+            ],
+            "count" : 
+            [
+                0,
+                0,
+                0
+            ]
+            
+            
+        }
+        var finalPrice = 0;
+
+        for(let i = 0; i < productCount; i++){
+            document.querySelectorAll('.product-content button')[i].addEventListener('click',function(){
+                switch(i){
+                    case 0:
+                        finalPrice += productInfo[i]['가격'];
+                        menuCount['count'][i]++;
+                        break;
+                    case 1:
+                        finalPrice += productInfo[i]['가격'];
+                        menuCount['count'][i]++;
+                        break;
+                    case 2:
+                        finalPrice += productInfo[i]['가격'];
+                        menuCount['count'][i]++;
+                        break;
+                    default:
+                        finalPrice = 0;
+                }
+                for(let i = 0; i < productCount; i++){
+                    document.querySelectorAll('.count-menu p')[i].innerHTML = menuCount['menu'][i] +' : ' + menuCount['count'][i] + '잔';
+                }
+                console.log(menuCount['menu'][i]);
+                console.log(menuCount['count'][i]);
+                document.getElementById('final-price').innerHTML = '총 금액 : ' + finalPrice + ' 원';
+            })
+        }
+        
+
+    </script>
+</body>
+</html>

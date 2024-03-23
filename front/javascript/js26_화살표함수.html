@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .top-nav{
+            position: fixed;
+            background-color: #ddd;
+            width: 100%;
+            height: 6rem;
+            padding: 0 2rem;
+            z-index: 5;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo{
+            transition: all 0.5s;
+        }
+
+        li{ 
+            display: inline-block;
+            padding: 0.5rem;
+        }
+
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+
+        .container-content{
+            position: relative;
+            width: inherit;
+            height: 800px;
+            top: 6rem;   
+            border: 2px solid black;
+        }
+
+        .sticky-box{
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            color: #fff;
+
+            position: sticky;
+            top: 100px;
+            left: 70%;
+        }
+
+    </style>
+
+    <div class="top-nav">
+        <h1 id="logo">LOGO</h1>
+        <ul>
+            <li>
+                <a href="#">홈</a>
+            </li>
+            <li>
+                <a href="#">소개</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-content">
+        <div class="sticky-box">스티키</div>
+    </div>
+
+    <div class="container-content">
+        <div class="sticky-box">스티키</div>
+    </div>
+    
+    <div class="container-content">
+        <div class="sticky-box">스티키</div>
+    </div>
+
+    <script>
+
+        var scrollPosition = 0;
+        window.addEventListener('scroll',()=>{
+            console.log(window.scrollY);
+            scrollPosition = window.scrollY;
+
+            if(scrollPosition > 800){
+                document.getElementById('logo').style.fontSize = "16px";
+                document.getElementById('logo').style.color = "#C00";
+            }else{
+                document.getElementById('logo').style.fontSize = "32px";
+                document.getElementById('logo').style.color = "#000";
+            }
+        })
+    </script>
+</body>
+</html>
