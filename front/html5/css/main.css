@@ -316,6 +316,7 @@ a{
     box-sizing: border-box;
     margin: 0;
     height: 62px;
+    width: 50%;
 }
 
 .section-notice .notice-left{
@@ -325,37 +326,42 @@ a{
     width: 50%;
     box-sizing: border-box;
     background-color: #000;
-    position: absolute;
     color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
 }
 
 .section-notice .notice-left-inner{
-    height: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    width: 70%;
-    margin-left: 30%;
+    width: 60%;
 }
 
 .section-notice .notice-left-inner-ul{
-    width: 80%;
     text-align: left;
     font-size: 14px;
+    /* max-height: 19px; */
 }
 
-.section-notice .notice-left-inner-ul .notice-left-li:nth-child(n+2){
+.notice-left-li{
+    max-height: 19px;
+}
+
+/* .section-notice .notice-left-inner-ul .notice-left-li:nth-child(n+2){
     display: none;
+} */
+.hidden{
+    max-height: 0;
+    overflow: hidden;
 }
 
 .section-notice .notice-left-li:hover .notice-left-link{
     text-decoration: underline;
 }
 
-.section-notice .notice-left-li:hover .notice-left-link,
-.section-notice .notice-left-link:visited
-{
+.section-notice .notice-left-li .notice-left-link{
     color: #fff;
 }
 
@@ -370,20 +376,18 @@ a{
 
 .notice-right{
     position: absolute;
-    left: 50%;
+    right: 0;
     width: 50%;
-    height: 50px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.notice-right-inner{
-    height: 62px;
-    margin-left: 15%;
-}
 
 .notice-right-link {
     display: flex;
     align-items: center;
-    height: inherit;
 }
 
 .notice-right-link .btn-prom-down {

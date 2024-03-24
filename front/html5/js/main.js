@@ -70,10 +70,10 @@ function changNotice() {
     // 공지 사항 목록을 2초마다 순환하도록 설정합니다.
     setInterval(function() {
         // 현재 표시 중인 공지 사항을 숨깁니다.
-        notices[index].style.display = "none";
+        notices[index].classList.add('hidden');
         // 다음 공지 사항을 표시합니다.
         index = (index + 1) % notices.length;
-        notices[index].style.display = "block";
+        notices[index].classList.remove('hidden');
     }, 2000);
 }
 
