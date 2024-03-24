@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .select-tag{
+
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+    
+    <form>
+        <select class="select-tag">
+            <option value="커피">커피</option>
+            <option value="주스">주스</option>
+            <option value="차">차</option>
+        </select>
+
+        <select class="select-tag hidden">
+            <option>1잔</option>
+            <option>2잔</option>
+            <option>3잔</option>
+        </select>
+    </form>
+
+    <script>
+        var firstSelect = document.querySelectorAll('.select-tag')[0];
+        var secondSelect = document.querySelectorAll('.select-tag')[1];
+        firstSelect.addEventListener('input', (e)=>{
+            // console.log(e.target.value);
+            // console.log(firstSelect[1].textContent);
+            if(firstSelect[1].textContent == e.target.value){
+                secondSelect.classList.remove('hidden');
+            }else{
+                secondSelect.classList.add('hidden');
+            }
+        })
+        
+        
+    </script>
+
+</body>
+</html>

@@ -27,6 +27,7 @@ submitBtn.addEventListener('click', function(){
 window.addEventListener('DOMContentLoaded', function() {
     // 요소가 차례대로 등장하도록 등장 함수를 호출합니다.
     appearSequentially();
+    changNotice();
 });
 
 function appearSequentially() {
@@ -61,8 +62,7 @@ function appearSequentially() {
     }
 }
 
-// section-notice의 notice-left-li 시간차로 바뀌게 하기.
-document.addEventListener("DOMContentLoaded", function() {
+function changNotice() {
     // 공지 사항 목록을 가져옵니다.
     var notices = document.querySelectorAll(".notice-left-li");
     var index = 0;
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         index = (index + 1) % notices.length;
         notices[index].style.display = "block";
     }, 2000);
-});
+}
 
 // 요소가 화면에 나타날 때 애니메이션을 적용하는 IntersectionObserver를 생성합니다.
 var observer = new IntersectionObserver(function(entries) {

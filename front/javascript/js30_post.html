@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Post요청</title>
+</head>
+<body>
+
+    <script>
+        // https://httpbin.org/post
+
+        fetch('https://httpbin.org/post', {
+            // 잡다구리한 정보들을 입력
+            method:'POST',
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            // 내가 보낼 값
+            body:JSON.stringify({
+
+            })
+        })
+        .then(res=>res.json())
+        .then(data=> {
+            console.log(data['url']);
+        })
+        .catch(err=>console.error('에러발생',err))
+
+    </script>
+    
+</body>
+</html>

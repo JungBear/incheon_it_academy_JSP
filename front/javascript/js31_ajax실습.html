@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="get-btn">get요청</button>
+    <button id="post-btn">Post요청</button>
+    <button id="clear-btn">지우기</button>
+
+    <div id="box"></div>
+
+    <script>
+        var getBtn = document.getElementById('get-btn');
+        var postBtn = document.getElementById('post-btn');
+        var clearBtn = document.getElementById('clear-btn');
+        var box = document.getElementById('box');
+        // https://httpbin.org/post
+        // https://httpbin.org/get
+        getBtn.addEventListener('click', (e) => {
+            fetch('https://httpbin.org/get')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                var text = `
+                <p>${JSON.stringify(data)}</p>
+                <h1>${data['url']}</h1>
+                <hr>
+                `;
+                box.insertAdjacentHTML('beforeend',text);
+            }).catch( err => console.error("error",err))
+        })
+
+        postBtn.addEventListener('click', (e) => {
+            fetch('https://httpbin.org/post',{
+                method : 'POST',
+                headers : {
+                "Content-Type" : "application/json"
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                var text = `
+                <p>${JSON.stringify(data)}</p>
+                <h1>${data['url']}</h1>
+                <hr>
+                `;
+                box.insertAdjacentHTML('beforeend',text);
+            }).catch( err => console.error("error",err))
+        })
+
+        clearBtn.addEventListener('click', (e)=>{
+            box.innerHTML = ''
+        })
+    </script>
+</body>
+</html>

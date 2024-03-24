@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS로 HTML태그 만들기</title>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <button id="btn">글추가</button>
+
+    <script>
+        // 방법 1
+        // createElement로 추가
+        var box = document.getElementById('box');
+        var pTag = document.createElement('p');
+        pTag.innerHTML = '고고씽';
+        box.appendChild(pTag);
+
+        // 방법 2
+        // 변수에 HTML태그처럼 넣어버리기
+        var text = "고고씽";
+        var boxCoding = `
+            <p class="font-yellow">${text}탑블레이드</p>
+        `;
+        // 추가할꺼면 insertAdjacentHTML, 새로쓸꺼면 innerHTML
+        // beforeend -> 끝에 추가해라
+        box.insertAdjacentHTML('beforeend',boxCoding);
+
+
+
+        var btn = document.getElementById('btn');
+        var hTag = `
+            <h3>졸려</h3>    
+        `;
+        btn.addEventListener('click', ()=>{
+            box.insertAdjacentHTML('beforeend',hTag);
+        })
+
+    </script>
+    
+
+</body>
+</html>
