@@ -1,4 +1,4 @@
-package ex1_first;
+package ex_0322;
 
 public class Ex1_first {
 

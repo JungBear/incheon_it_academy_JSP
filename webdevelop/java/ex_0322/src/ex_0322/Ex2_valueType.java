@@ -1,4 +1,4 @@
-package ex2_valueType;
+package ex_0322;
 
 public class Ex2_valueType {
 
