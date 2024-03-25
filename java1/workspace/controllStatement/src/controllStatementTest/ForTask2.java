@@ -51,7 +51,6 @@ public class ForTask2 {
 		
 		for(int i = 0; i<6; i++) {
 			System.out.print((char)(i+65));
-//			System.out.printf("%c",i+65);
 		}
 		
 		System.out.println("\n------------------------------");
@@ -60,7 +59,9 @@ public class ForTask2 {
 		
 //		A~F까지 중 C빼고 출력
 		for(int i = 0; i<6; i++) {
-			i = i == 2 ? 3 : i;
+			char c = (char)(i+65);
+			i = c == 'C' ? i+1 : i;
+//			i = i == 2 ? 3 : i;
 			System.out.print((char)(i+65));
 		}
 		
