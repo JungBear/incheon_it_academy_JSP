@@ -1,4 +1,4 @@
-package ex1_casting;
+package ex_0325;
 
 public class Ex2_Demotion {
 

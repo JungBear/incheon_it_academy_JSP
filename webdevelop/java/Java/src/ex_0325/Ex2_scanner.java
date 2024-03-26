@@ -1,4 +1,4 @@
-package ex2_scanner;
+package ex_0325;
 
 import java.util.Scanner;
 
@@ -36,6 +36,7 @@ public class Ex2_scanner {
 		System.out.printf("제 나이는 %d입니다.\n", age);
 		System.out.printf("제 주소는 %s입니다.\n", address);
 		System.out.printf("제 키는 %fcm입니다.\n", height);
+		
 		
 	}
 
