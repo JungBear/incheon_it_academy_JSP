@@ -46,6 +46,36 @@ public class Ex2_switch {
 		if(result != 0) {
 			System.out.println(result);
 		}
+		
+		
+//		month에 입력반고
+//		달이 몇일까지 있는지 switch문으로 작성
+//		break 3번
+		
+		int month = 0;
+		int day = 0;
+		
+		System.out.print("달을 입력해주세요 : ");
+		month = sc.nextInt();
+		
+		switch(month) {
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			day = 31;
+			break;
+		case 4: case 6: case 9: case 11:
+			day = 30;
+			break;
+		case 2:
+			day = 30;
+			break;
+		default:
+			System.out.println("잘못입력하셨습니다");
+		
+		}
+		
+		if(day!=0) {
+			System.out.println(day);
+		}
 	}
 
 }
