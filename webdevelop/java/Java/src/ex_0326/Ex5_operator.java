@@ -61,7 +61,8 @@ public class Ex5_operator {
 		float avg = (float)total / 3;
 		System.out.println("세 과목의 평균 : " + avg);
 		
-		String isPass = (korean >= 40 || math >= 40 || english >= 40) && avg >= 40 ? "합격" : "불합격";
+		String isPass = (korean >= 40 && math >= 40 && english >= 40 && avg >= 60) ? "합격" : "불합격";
+//		String isPass = korean >= 40 ? math >= 40 ? english >= 40 ? avg >= 60 ? "합격" : "불합격" : "불합격" : "불합격" : "불합격";
 		System.out.println("합격여부 : " + isPass);
 		
 		
