@@ -21,8 +21,12 @@ public class ArTest {
 		
 		for (int i = 0; i < arData.length; i++) {
 			arData[i] = arData.length - i;
+		}
+		for (int i = 0; i < arData.length; i++) {
 			System.out.println(arData[i]);
 		}
+		
+		System.out.println("-------------");
 
 	}
 
