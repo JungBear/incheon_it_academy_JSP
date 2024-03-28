@@ -40,6 +40,32 @@ public class Ex2DoWhile {
 		System.out.println("영어 : " + english + "점");
 		System.out.println("수학 : " + math + "점");
 		
+//		1 2 3 4 5 6 7 8 9 10 
+//		2 3 4 5 6 7 8 9 10 1 
+//		3 4 5 6 7 8 9 10 1 2 
+//		4 5 6 7 8 9 10 1 2 3 
+//		5 6 7 8 9 10 1 2 3 4 
+//		6 7 8 9 10 1 2 3 4 5 
+//		7 8 9 10 1 2 3 4 5 6 
+//		8 9 10 1 2 3 4 5 6 7 
+//		9 10 1 2 3 4 5 6 7 8 
+//		10 1 2 3 4 5 6 7 8 9 
+
+		
+		int num = 0;
+		for(int idx = 1; idx <= 10; idx++) {
+			num = idx;
+			for(int j = 0; j < 10; j++) {
+				if(num > 10) {
+					num = 1;
+				}
+				System.out.print(num++ + " ");
+			}
+			System.out.println();
+		}
+		
+		
+		
 
 	}
 
