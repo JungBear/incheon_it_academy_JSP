@@ -41,9 +41,11 @@ public class Ex2_switch {
 			result = num1 % num2;
 			break;
 		default:
-			System.out.println("잘못입력하셨습니다.");
+			result = 0;
 		}
-		if(result != 0) {
+		if(result == 0) {
+			System.out.println("잘못 입력하셨습니다");
+		}else {
 			System.out.println(result);
 		}
 		
@@ -66,7 +68,7 @@ public class Ex2_switch {
 			day = 30;
 			break;
 		case 2:
-			day = 30;
+			day = 28;
 			break;
 		default:
 			System.out.println("잘못입력하셨습니다");
@@ -74,7 +76,7 @@ public class Ex2_switch {
 		}
 		
 		if(day!=0) {
-			System.out.println(day);
+			System.out.println(month + "월은 " + day + "까지 있습니다.");
 		}
 	}
 
