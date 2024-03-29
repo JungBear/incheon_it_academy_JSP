@@ -63,7 +63,17 @@ public class Ex2DoWhile {
 			}
 			System.out.println();
 		}
-		
+		/*
+		int num = 0;
+		for(int idx = 1; idx <= 10; idx++) {
+			for(int j = 0; j < 10; j++) {
+				num = idx + j;
+				if(num > 10) num -= 10;
+				System.out.print(num + " ");
+			}
+			System.out.println();
+		}
+		*/
 		
 		
 
