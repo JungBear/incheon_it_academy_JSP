@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타벅스코리아</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div class="top-nav">
+            <div class="top-nav-inner">
+                <a href="#">
+                    <img src="./img/logo.png" alt="" width="75px" height="75px">
+                </a>
+                <div class="right-nav">
+                    <div class="first-nav">
+                        <ul>
+                            <li class="nav-content"><a class="nav-menu" href="./input_layout2.html">Sign In</a></li>
+                            <li class="nav-content"><a class="nav-menu" href="#">My Starbucks</a></li>
+                            <li class="nav-content"><a class="nav-menu" href="#">Customer Seveice & Ideas</a></li>
+                            <li class="nav-content"><a class="nav-menu" href="#">Find a Store</a></li>
+                            <li class="nav-content nav-btn">
+                                <form id="search-form" class="hidden">
+                                    <input type="text" class="search-input hidden "  id='search-input' placeholder="통합검색">
+                                </form>
+                                <img src="./img/돋보기.png" id="submit-btn" alt="" >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="second-nav">
+                        <ul>
+                            <li class="nav-content">
+                                <a class="nav-menu" href="#">COFFEE</a>
+                                <div class="dropdown">
+                                    <div class="dropdown-inner">
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">커피</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 원두</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 비아</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스앳홈 by 캡슐</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">나와 어울리는 커피</a>
+                                            </li>
+                                        </ul>     
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">커피 이야기</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">농장에서 우리의 손으로</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">최상의 아라비카 원두</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 로스트 스펙트럼</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 디카페인</a>
+                                            </li>
+                                        </ul>             
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">스타벅스 리저브</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">RESERVE MAGAZINE</a>
+                                            </li>
+                                        </ul>     
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">에스프레소 음료</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">도피오</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">에스프레소</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">마키아또</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">마키아또</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">카푸치노</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">라떼</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">모카</a>
+                                            </li>
+                                        </ul>    
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">최상의 커피를 즐기는 법</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">커피 프레스</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">푸어 오버</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">아이스 푸어 오버</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">커피 메이커</a>
+                                            </li>
+                                        </ul>
+                                        
+                                </div>
+                            </li>
+                            <li class="nav-content" id="nav-content2">
+                                <a class="nav-menu" href="#">MENU</a>
+                                <div class="dropdown">
+                                    <div class="dropdown-inner">
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">음료</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">콜드 브루</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">브루드 커피</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">에스프레소</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">프라푸치노</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">블렌디드</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 리프레셔</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 피지오</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">티(티바나)</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">기타 제조 음료</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 주스(병음료)</a>
+                                            </li>
+                                         
+                                        </ul>     
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">커피 이야기</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">농장에서 우리의 손으로</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">최상의 아라비카 원두</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 로스트 스펙트럼</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 디카페인</a>
+                                            </li>
+                                        </ul>             
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">스타벅스 리저브</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">RESERVE MAGAZINE</a>
+                                            </li>
+                                        </ul>     
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">에스프레소 음료</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">도피오</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">에스프레소</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">마키아또</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">마키아또</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">카푸치노</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">라떼</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">모카</a>
+                                            </li>
+                                        </ul>    
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">최상의 커피를 즐기는 법</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">커피 프레스</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">푸어 오버</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">아이스 푸어 오버</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">커피 메이커</a>
+                                            </li>
+                                        </ul>
+                                        
+                                </div>
+                            </li>
+                            <li class="nav-content">
+                                <a class="nav-menu" href="#">STORE</a>
+                                <div class="dropdown">
+                                    <div class="dropdown-inner">
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">커피</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">4</a>
+                                            </li>
+                                        </ul>     
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">커피 이야기</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">농장에서 우리의 손으로</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">최상의 아라비카 원두</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 로스트 스펙트럼</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">스타벅스 디카페인</a>
+                                            </li>
+                                        </ul>             
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">스타벅스 리저브</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">RESERVE MAGAZINE</a>
+                                            </li>
+                                        </ul>     
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">에스프레소 음료</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">도피오</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">에스프레소</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">마키아또</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">마키아또</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">카푸치노</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">라떼</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">모카</a>
+                                            </li>
+                                        </ul>    
+                                        <ul>
+                                            <li class="dropdown-title">
+                                                <a href="#">최상의 커피를 즐기는 법</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">커피 프레스</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">푸어 오버</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">아이스 푸어 오버</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">커피 메이커</a>
+                                            </li>
+                                        </ul>
+                                        
+                                </div>
+                            </li>
+                            <li class="nav-content">
+                                <a class="nav-menu" href="#">RESPONSIBLEITY</a>
+                            </li>
+                            <li class="nav-content">
+                                <a class="nav-menu" href="#">STARBUCKS REWARDS</a>
+                            </li>
+                            <li class="nav-content">
+                                <a class="nav-menu" href="#">CORPERATE SALES</a>
+                            </li>
+                            <li class="nav-content">
+                                <a class="nav-menu" href="#">WHAT'S NEW</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="botton-nav">
+
+        </div>
+    </nav>
+</body>
+</html>

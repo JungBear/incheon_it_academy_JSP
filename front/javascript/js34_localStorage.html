@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    
+    <input type="text" id="input-name">
+    <button id="save-btn">저장하기</button>
+    <button id="add-btn">추가</button>
+    <button id="remove-btn">지우기</button>
+
+    <script>
+
+        document.getElementById('save-btn').addEventListener('click', ()=>{
+            var inputName = document.getElementById('input-name').value;
+            console.log(inputName);
+            localStorage.setItem('이름', inputName);
+            alert('이름이' + inputName + '으로 변경되었습니다.');
+            document.getElementById('input-name').value = '';
+        })
+
+        var value = [1, 2, 3];
+        value = JSON.stringify(value);
+        
+        var jsonString = '{}'
+        JSON.parse(jsonString);
+
+        localStorage.setItem('value', value);
+        document.getElementById('add-btn').addEventListener('click', ()=>{
+            let tempValue = localStorage.getItem('value');
+            tempValue = JSON.parse(tempValue);
+
+            // 배열에서 마지막 숫자를 가져와서
+            const lastValue = tempValue[tempValue.length-1];
+            // 배열 마지막 부분에 값을 추가
+            tempValue.push(lastValue+1);
+
+            tempValue = JSON.stringify(tempValue);
+            localStorage.setItem('value', tempValue);
+        })
+
+        document.getElementById('remove-btn').addEventListener('click', ()=>{
+            localStorage.removeItem('이름');
+            localStorage.removeItem('value');
+        })
+        
+
+
+    </script>
+
+</body>
+</html>

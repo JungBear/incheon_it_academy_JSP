@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        div, input, textarea{
+            box-sizing: border-box;
+        }
+
+        .grid-container{
+            display: grid;
+            width: 300px;
+            height: 300px;
+            grid-template-areas: 
+            "위쪽 위쪽 위쪽"
+            "왼쪽 안쪽 안쪽"
+            "왼쪽 안쪽 안쪽"
+            ; 
+        }
+
+        .inner{
+            border: 2px solid #000;
+        }
+
+        .first{
+            grid-area: 위쪽;
+        }
+
+        .second{
+            grid-area: 왼쪽;
+        }
+
+        .third{
+            grid-area: 안쪽;
+        }
+
+        .grid-layout{
+            display: grid;
+            width: 300px;
+            height: 300px;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            /* grid-template-areas: 
+            "위쪽 위쪽 ."
+            "위쪽 위쪽 ."
+            ". . ."
+            ; */
+        }
+
+        .col-span-2{
+            grid-column-start: span 2;
+            /* grid-area: 위쪽; */
+        }
+        
+        .low-span-2{
+            grid-row-start: span 2;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width:768px){
+            .grid-container{
+                width: 300px;
+                height: 300px;
+                grid-template-areas: 
+                "위쪽 "
+                "왼쪽"
+                "안쪽"
+                ; 
+            }
+
+            .grid-layout{
+                width: 300px;
+                height: 300px;
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                /* grid-template-areas: 
+                    "위쪽"
+                    "."
+                    "."
+                    "."
+                    "."
+                    "."
+                    ; */
+            }
+            .col-span-1{
+                grid-column-start: span 1;
+            }
+            
+            .low-span-1{
+                grid-row-start: span 1;
+            }
+        }
+
+
+    </style>
+
+    <div class="grid-container">
+        <div class="inner first">1</div>
+        <div class="inner second">2</div>
+        <div class="inner third">3</div>
+    </div>
+    <br>
+    <hr>
+
+    <div class="grid-layout">
+        <div class="inner col-span-2 low-span-2 col-span-1 low-span-1">
+            <img src="https://picsum.photos/500?r=0 " alt="">
+        </div>
+        <div class="inner">
+            <img src="https://picsum.photos/500?r=1 " alt="">
+        </div>
+        <div class="inner">
+            <img src="https://picsum.photos/500?r=2 " alt="">
+        </div>
+        <div class="inner">
+            <img src="https://picsum.photos/500?r=3 " alt="">
+        </div>
+        <div class="inner">
+            <img src="https://picsum.photos/500?r=4 " alt="">
+        </div>
+        <div class="inner">
+            <img src="https://picsum.photos/500?r=5 " alt="">
+        </div>
+    </div>
+
+</body>
+</html>

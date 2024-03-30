@@ -1,0 +1,226 @@
+@font-face {
+    font-family: '나눔';
+    src: url(./NanumSquareR.woff2);
+}
+
+body{font-family: '나눔'; margin: 0;background-color: #333;}
+
+div, input, textarea{box-sizing: border-box;}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+li{
+    list-style: none;
+}
+
+.top-nav{
+    background-color: rgb(246, 245, 239);
+}
+
+.top-nav-inner{
+    width: 1100px;
+    height: 120px;
+    margin: auto;
+    /* 가로배치 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}   
+
+.first-nav{
+    margin-bottom: 40px;
+    height: 20px;
+}
+
+.first-nav ul{
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.first-nav li {
+    display: inline-block;
+    position: relative; /* 부모 요소를 기준으로 자식 요소를 배치하기 위해 position: relative;를 추가합니다. */
+    opacity: 0.7;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.first-nav li:hover{
+    text-decoration: underline;
+}
+
+
+.first-nav li:not(:last-child):after {
+    content: "";
+    position: absolute; /* 선을 li 요소의 내부에 절대 위치시킵니다. */
+    left: 100%; /* 선의 시작점을 li 요소의 오른쪽 끝으로 설정합니다. */
+    width: 1px; /* 선의 너비 */
+    top: 5px;
+    height:70%; /* 선의 높이를 li 요소의 높이의 절반으로 설정합니다. */
+    background-color: gray; /* 선의 색상 */
+    opacity: 0.1;
+}
+
+.nav-content
+{
+    font-size: 0.8rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+#search-form{
+    width: 100px;
+    opacity: 1;
+    border: none;
+    font-size: 12px;
+    padding: 0 0.25rem;
+}
+
+.search-input{
+    border: none;
+    width: 110px;
+    transition: all 0.5s;
+}
+
+.search-input.hidden,
+#search-form.hidden
+{
+    opacity: 0;
+    width: 0px;
+    visibility: hidden;
+}
+
+ .nav-btn{
+    width: 34px;
+    height: 34px;
+    border: 1px solid gray;
+    position: relative;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: all 0.5s;
+    
+}
+
+.first-nav .width-150{
+    width: 150px;
+}
+
+#submit-btn{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.second-nav .nav-content .nav-menu{
+    position: relative;
+    display: block;
+    width: inherit;
+    height: inherit;
+    padding: 10px 20px 35px 20px;
+}
+
+.second-nav ul{
+    margin: 0;
+}
+
+.top-nav-inner a
+/* a태그의 기본상태, a태그를 방문한 후 */
+{
+    color: #555555;
+}
+
+.second-nav .nav-content:hover
+/* li영역에 마우스를 올려두었을 때 li의 색을 darkgreen의 색으로 밑줄을 주고싶다 */
+{
+    color: darkgreen;
+    background-color: #333;
+    text-decoration: underline;
+    
+}
+
+.second-nav .nav-content:hover .nav-menu
+/* li영역에 마우스가 들어왔을때 글자의 색을 darkgreen으로 바꾼다 */
+{
+    color: #669900;
+}
+
+
+.dropdown{
+    position: absolute;
+    top: 127.33px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+}
+
+.dropdown-inner{
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent; 
+    text-align: left;
+    height: 240px;
+    visibility: hidden;
+    opacity: 0;
+
+    /* display */
+    display: flex;
+    justify-content: center;
+}
+
+
+.dropdown-inner ul{
+    width: 170px;
+    height: 240px;
+}
+
+.dropdown-inner ul li{
+    margin-bottom: 5px;
+}
+
+.dropdown-inner ul li a{
+    color: #999;
+    font: 12px;
+}
+
+.dropdown-inner a:visited{
+    color: #999;
+
+}
+
+.dropdown-inner .dropdown-title{
+    font-size : 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dropdown-title a:visited{
+    color: #fff;
+}
+
+.second-nav .nav-content:hover .dropdown,
+.second-nav .nav-content:hover .dropdown-inner,
+.dropdown-inner:hover .dropdown-inner{
+    height: 300px;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.dropdown .dropdown-inner ul li a:hover{
+    text-decoration: underline;
+}

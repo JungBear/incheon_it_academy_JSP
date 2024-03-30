@@ -1,6 +1,7 @@
 body{
     margin: 0;
     overflow-x: hidden;
+    background-color: #333;
 }
 
 div, textarea{
@@ -184,23 +185,22 @@ a{
 }
 
 .dropdown-inner{
-    width: 100;
+    width: 100%;
     margin: 0 auto;
     background-color: transparent; 
     text-align: left;
-    height: 240px;
     visibility: hidden;
     opacity: 0;
 
     /* display */
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 
 .dropdown-inner ul{
     width: 170px;
-    height: 240px;
 }
 
 .dropdown-inner ul li{
@@ -244,8 +244,17 @@ a{
 }
 
 .float{
-    height: 127px;
-    background-color: #fff ;
+    height: 130px;;
+}
+
+.ads{
+    position: fixed;
+    background-image :url(../img/ads.png);
+    width: 140px;
+    height: 94px;
+    top:20%;
+    left: 80%;
+    z-index: 5;
 }
 
 .section-1
@@ -382,6 +391,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
 }
 
 
