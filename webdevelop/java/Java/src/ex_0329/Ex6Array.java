@@ -1,4 +1,4 @@
-package Ex_0329;
+package ex_0329;
 
 import java.util.Random;
 import java.util.Scanner;
