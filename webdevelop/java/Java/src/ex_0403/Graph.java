@@ -23,12 +23,17 @@ public class Graph {
 		PrintGraph pg = new PrintGraph();
 		
 		int[] ar = new int[100];
+		int[] count = new int[10];
+		
 		for (int i = 0; i < ar.length; i++) {
 			int rn = rnd.nextInt(10);
 			ar[i] = rn;
 		}
 		
-		pg.print(ar);
+		for (int i = 0; i < ar.length; i++) {
+			count[ar[i]]++;
+		}
+		pg.print('#', count);
 		
 	}
 

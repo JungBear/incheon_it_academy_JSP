@@ -13,51 +13,17 @@ package ex_0403;
  */
 public class PrintGraph {
 	
-	int[] arr = new int[10];
 
-	public void print(int[] ar) {
-		for (int i = 0; i < ar.length; i++) {
-			switch(ar[i]) {
-			case 0:
-				arr[0]++;
-				break;
-			case 1:
-				arr[1]++;
-				break;
-			case 2:
-				arr[2]++;
-				break;
-			case 3:
-				arr[3]++;
-				break;
-			case 4:
-				arr[4]++;
-				break;
-			case 5:
-				arr[5]++;
-				break;
-			case 6:
-				arr[6]++;
-				break;
-			case 7:
-				arr[7]++;
-				break;
-			case 8:
-				arr[8]++;
-				break;
-			case 9:
-				arr[9]++;
-				break;
-			}
-		}
-		// 0의 갯수
-		for (int i = 0; i < arr.length; i++) {
+	public void print(char ch, int[] count) {
+	
+		
+		for (int i = 0; i < count.length; i++) {
 			
 			System.out.print(i + "의 갯수 : ");
-			for(int j = 0 ; j < arr[i]; j++) {
-				System.out.print("#");
+			for(int j = 0 ; j < count[i]; j++) {
+				System.out.print(ch);
 			}
-			System.out.println(" " + arr[i]);
+			System.out.println(" " + count[i]);
 			
 		}
 
