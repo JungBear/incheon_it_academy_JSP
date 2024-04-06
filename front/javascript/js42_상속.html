@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Parent {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+                this.kind = "사람";
+            }
+            cook(){
+                console.log(`${this.name}은(는) 요리한다`);
+            }
+
+            walk(){
+                console.log("두발로 걷습니다.");
+            }
+        }
+
+        class Child extends Parent{
+            constructor(name, age){
+                super(name, age);
+            }
+
+            cook(){
+                super.cook();
+                console.log(`${this.name}은(는) 요리를 한다`);
+            }
+        }
+
+        var child = new Child("홍길동", 23);
+        child.cook();
+        console.log(child.age);
+
+    </script>
+
+</body>
+</html>

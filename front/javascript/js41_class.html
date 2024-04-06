@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class Dog{
+            constructor(name){
+                this.age = 7;
+                this.name = name;
+            }
+            sayHello(){
+                console.log("멍멍");
+            }
+        }
+
+        class Person{
+            sayHello(){
+                console.log("안녕하세요");
+            }
+        }
+
+        class Monky{
+            sayHello(){
+                console.log("우끼끼");
+            }
+        }
+
+        var person = new Person();
+
+        var monky = new Monky();
+
+        var dog = new Dog("강아지");
+        var dig = new Dog("멍멍이");
+        dog.sayHello();
+        console.log(dog.name);
+        console.log(dig.name);
+        Dog.prototype.leg = 4;
+        console.log(dog.leg);
+        
+    </script>
+    
+</body>
+</html>

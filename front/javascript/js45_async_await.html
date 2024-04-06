@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="text-read-btn">텍스트 파일 읽기</button>
+    <button id="img-load-btn">이미지 불러오기</button>
+    <div>
+        <p id="text"></p>
+    </div>
+    <img id="img" src="" alt="">
+
+    <script>
+        async function f1(){
+            console.log("함수 사용");
+        }
+        
+        f1().then(function(){
+            console.log("함수 사용 이후");
+        })
+
+        // async의 결과를 then에 전달하고 싶으면 return
+        async function f2(){
+            var sum = 1 + 1;
+            return sum;
+            // 실패를 전달하고 싶으면
+            return Promise.reject()
+        }
+
+        f2().then(function(sum){
+            console.log(sum)
+        })
+
+        document.getElementById("text-read-btn").addEventListener('click',readFile);
+
+
+        async function readFile(){
+            // 비동기 작업을 할땐 fetch
+            // fetch작업이 끝날 때 까지 기다림
+            try{
+                let result = await fetch("textfile.txt");
+                if(!result.ok){
+                    throw new Error('');
+                }
+            
+                // 결과값을 텍스트로 변경할때까지 기다린다
+                let fileContent = await result.text();
+                console.log(fileContent);
+                document.getElementById("text").innerHTML = fileContent;
+            }catch(e){
+                console.log('a');
+            }
+
+        }
+
+        // 버튼 만들고
+        // 버튼 누르면 이미지를 가져오는데
+        // async - await 사용해서 수행
+
+        var imgBtn = document.getElementById("img-load-btn");
+        var img = document.getElementById("img");
+        
+        imgBtn.addEventListener('click', loadImg);
+
+        async function loadImg(){
+            var response = await fetch("https://httpbin.org/get");
+            if(response.ok){
+                // 변환하는데 양이 많아서 시간이 좀 걸릴 수 있으니 await
+                let data = await response.text();
+                document.getElementById("text").innerHTML = data;
+            }
+            // var imgAddress = "https://picsum.photos/500?r=" + Math.random();
+
+            // try{
+            //     await fetch(img.src = imgAddress);
+            //     await alert("이미지 로딩성공");
+            // }catch(e){
+            //     console.log(e);
+            // }
+
+        }
+
+    </script>
+</body>
+</html>

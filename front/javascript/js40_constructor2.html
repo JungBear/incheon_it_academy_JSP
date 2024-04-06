@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function constructor2(name){
+            this.name = name;
+            this.종 = "사람";
+        }
+
+        //
+        constructor2.prototype.인사 = function(){
+            console.log(`안녕하세요 ${this.name} 입니다`)
+        }
+
+        var person1 = new constructor2("홍길동");
+        console.log(person1);
+
+        var person2 = new constructor2("김유신");
+        console.log(person2.name);
+
+        person2.인사();
+    </script>
+    
+</body>
+</html>

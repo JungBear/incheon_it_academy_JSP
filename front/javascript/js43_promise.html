@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var promise = new Promise(function(success, fail){
+            var 오래걸리거나_실패할수있는것 = 1+1;
+            success();
+        });
+
+        promise.then(function(){
+            console.log("성공");  //promise가 끝나야 실행하는 것을 보장
+        }).then(function(){
+            console.log("성공2"); // then이 끝나야 실행하는 것을 보장
+        })
+    </script>
+
+</body>
+</html>

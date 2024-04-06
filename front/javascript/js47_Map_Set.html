@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = [1, 2, 3];
+        var arr2 = new Array();
+        var obj1 = {"key":"value"};
+        var obj2 = new Object();
+
+        var map1 = new Map([
+            [4, "사"],
+            [5, "오"]
+        ]);
+        map1.set(1, "일");
+        map1.set(2, "이");
+        map1.set(3, "삼");
+        map1.set(3 , "사");
+        console.log(map1);
+        map1.delete(2);
+        
+        map1.forEach((key, value)=>{
+            console.log(`${key}==>${value}`)
+        })
+
+        let arr3 = [1, 2, 3, 2, 2, 2];
+        let set = new Set();
+
+        set.add(1);
+        set.add(2);
+        set.add(2);
+        set.add(2);
+        set.add(3);
+        set.add(3);
+        set.add(3);
+        console.log(set);
+
+        set.delete(2);
+        console.log(set);
+        
+        console.log(set.has(3));
+
+        set.forEach((value)=>{
+            console.log(value);
+        })
+   </script>
+    
+</body>
+</html>
