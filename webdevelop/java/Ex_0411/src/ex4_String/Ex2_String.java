@@ -21,7 +21,7 @@ public class Ex2_String {
 			}
 		}
 		System.out.println("a의 갯수 : " + count);
-
+		System.out.println("==================");
 		
 		//키보드에서 세글자 이상의 단어를 입력받은 뒤
 		//회문인지 아닌지 판별하는 코드 작성
@@ -30,10 +30,9 @@ public class Ex2_String {
 		
 		System.out.print("입력해주세요 : ");
 		String str1 = sc.next();
-		char[] arr = str1.toCharArray();
 		//System.out.println(arr);
 		String str2 = "";
-		for (int i = arr.length-1; i >= 0; i--) {
+		for (int i = str1.length()-1; i >= 0; i--) {
 			str2 += str1.charAt(i);
 		}
 		//System.out.println("str2 : " + str2);
@@ -43,8 +42,7 @@ public class Ex2_String {
 		}else {
 			System.out.println("회문이 아닙니다.");
 		}
-		
-	
+		System.out.println("==================");
 	}
 
 }
