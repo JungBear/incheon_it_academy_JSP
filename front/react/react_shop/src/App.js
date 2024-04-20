@@ -42,7 +42,7 @@ function App() {
           {items.map(function(ele, idx){
             return(
               <>
-                <ItemCol data={data[idx]} img={img[idx]} />
+                <ItemCol data={items[idx]} img={img[idx]} />
               </>
             )
             })}
