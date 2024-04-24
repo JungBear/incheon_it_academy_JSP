@@ -1,5 +1,6 @@
 package exceptionTest;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ExceptionTask {
@@ -16,25 +17,35 @@ public class ExceptionTask {
 		
 		Scanner sc = new Scanner(System.in);
 		int[] arData = new int[5];
+		String msg = "번째 정수 : ", input = null;
+		int i = 0;
 		
 		while(true) {
-			try {
-				int i = 0;
-				System.out.print("정수를 입력해주세요");
-				String input = sc.next();
-				arData[i] = Integer.parseInt(input);
 				
-				i++;
-				if(input.equals("q")) {
-					break;
-				}
-			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println("너무 많이 입력하셨습니다");
+			System.out.print(i+1 + msg);
+			input = sc.next();
+			
+			if(input.equals("q")) {
+				break;
 			}
 			
-			
-			
+			try {
+				arData[i] = Integer.parseInt(input);
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("너무 많이 입력하셨습니다");
+				break;
+			} catch (NumberFormatException e1) {
+				System.out.println("입력한 값이 정수가 아닙니다.");
+				continue;
+			}catch(Exception e2){
+				System.out.println("에러");
+				System.out.println(e2);
+				continue;
+			}
+			i++;
+						
 		}
+		System.out.println("arData : " + Arrays.toString(arData));
 		
 		
 		
