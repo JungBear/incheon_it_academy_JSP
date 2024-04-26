@@ -12,18 +12,17 @@ public class ForEachTask {
 		
 		int total = 0;
 		double avg = 0.0;
-		int count = 0;
 		
 		for (int[] score : scores) {
+			total = 0;
 			for(int s : score) {
 				total += s;
 			}
-			count += score.length;
+			avg = (double)total / score.length;
+			System.out.println("총점 : " + total);
+			System.out.println("평균 : " + avg);
 		}
-		avg = (double)total / count;
-		
-		System.out.println("총점 : " + total);
-		System.out.println("평균 : " + avg);
+
 
 	}
 
