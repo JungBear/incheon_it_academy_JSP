@@ -3,7 +3,7 @@ package exceptionTest2;
 import java.util.Scanner;
 
 public class Chatting {
-	public static void main(String[] args) throws BadWordException{
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String msg = null;
 		
