@@ -16,6 +16,12 @@ let data = [
     title:'마카롱',
     content:'형형색색의 마카롱',
     price:3000
+  },
+  {
+    id:3,
+    title:'로고',
+    content:'로고',
+    price:1000
   }
 ];
 let num1 = 1;
