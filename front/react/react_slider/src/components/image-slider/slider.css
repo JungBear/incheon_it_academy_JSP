@@ -1,0 +1,31 @@
+.slider-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 450px;
+}
+
+.hide-current-img{
+    display: none;
+}
+
+.current-img{
+    width: 100%;
+    height: 100%;
+}
+
+.arrow{
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+}
+
+.arrow-left{
+    left:1rem;
+}
+
+.arrow-right{
+    right: 1rem;
+}
