@@ -1,0 +1,27 @@
+.top-nav-container{
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    text-align: center;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.scroll-progress-tracking{
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+}
+
+.current-progress-bar{
+    height: 10px;
+    background-color: red;
+    z-index: 5;
+    /* 처음에는 0% */
+    width: 0%;
+}
+
+.data-list{
+    margin-top: 100px;
+}
