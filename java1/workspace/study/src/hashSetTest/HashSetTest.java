@@ -10,8 +10,9 @@ public class HashSetTest {
 		animalSet.add("개");
 		animalSet.add("고양이");
 		animalSet.add("호랑이");
-		animalSet.add("원숭이");
 		
+		System.out.println(animalSet.add("까치"));
+		System.out.println(animalSet.add("개"));
 		
 	}
 }
