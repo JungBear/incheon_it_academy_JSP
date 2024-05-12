@@ -1,0 +1,28 @@
+.detail-item-container{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    overflow: hidden;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.75);
+    gap: 1.25rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0 , 0, 0.1);
+}
+
+.img-box{
+
+}
+
+.text-publisher{
+
+}
+
+.text-title{
+
+}
+
+.link-detail{
+
+}

@@ -1,0 +1,56 @@
+.nav-flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0;
+    max-width: 1152px;
+    margin: auto;
+    gap: 1.25rem;
+    /* 부모폰트이즈에 유동적 */
+}
+
+.nav-logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.nav-search-input{
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.75rem 2rem;
+    border-radius: 99px;
+    border: none;
+    outline: none;
+    width: 380px;
+    box-shadow:4px 4px 4px 4px rgba(254, 202, 202, 0.25);
+    transition: box-shadow 0.3s;
+}
+
+.nav-search-input:focus{
+    box-shadow:4px 4px 4px 4px rgba(254, 202, 202, 0.65);
+}
+
+.nav-link-ul{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-link-li{
+    color: #000;
+    transition: color 0.3s;
+}
+
+.nav-link-li:hover{
+    color: brown;
+}
+
+@media(min-width:1024px){
+    .nav-flex-container{
+        gap: 0;
+    }
+
+    .nav-search-input{
+        width: 24rem;
+    }
+}
