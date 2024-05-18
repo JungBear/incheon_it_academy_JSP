@@ -18,8 +18,8 @@ function App() {
         <Route path='/favorites' element={<Favorites/>}></Route>
         {/* // 쿼리 파라미터( 동적으로 URL을 설정하는 페이지)
             // -> :  */}
-        <Route path='/details/:id' element={<Details/>}></Route>  
-        <Route path='/detail-item' element={<DetailItem/>}></Route>
+        <Route path='/detail/:id' element={<Details/>}></Route>  
+        {/* <Route path='/detail-item' element={<DetailItem/>}></Route> */}
       </Routes>
 
     </div>

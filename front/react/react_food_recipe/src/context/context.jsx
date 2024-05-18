@@ -36,10 +36,30 @@ export default function GlobalState({children}){
         } catch (e) {
             console.log(e)
         }
-
     }
+
+    // 즐겨찾기 등록 리스트 state의 배열을 수정하는 함수(추가, 삭제)
+    // state의 배열은 직접 수정x => ...으로 분리하고 []로 감싸서 카피본으로 수정
+    // 변수를 안쓰고 useState를 사용하는 이유는 화면을 갱신해 주기위해
+    function hAddToFavorite(getCurItem){
+        let copyFavoritesList = [...favoritesList]; // 배열 통째로 분해했다가 다시 배열로 만들어서 대입
+        
+        // 동일한 ID가 있는지 검사(getCurItem의 ID와 favoritesList의 ID들을 비교)
+        const idx = copyFavoritesList.findIndex(e => e.id === getCurItem.id); // 못찾으면 -1, 찾으면 해당 위치 return
+        if(idx === -1){
+            // 없으면 즐겨찾기 리스트에 추가
+            copyFavoritesList.push(getCurItem); 
+        }else{
+            // 즐겨찾기 리스트에 있었으면 제거
+            copyFavoritesList.splice(idx);
+        }
+
+        // 새로만든 배열을 state에 바꿔준다.
+        setFavoritesList(copyFavoritesList);
+    }
+
     return(
-        <GlobalContext.Provider value={{searchParam, setSearchParam, hSubmit, foodList, setFoodList, foodDetailData, setFoodDetailData, favoritesList}}>
+        <GlobalContext.Provider value={{searchParam, setSearchParam, hSubmit, foodList, setFoodList, foodDetailData, setFoodDetailData, favoritesList, hAddToFavorite}}>
             {children}
         </GlobalContext.Provider>
     )
