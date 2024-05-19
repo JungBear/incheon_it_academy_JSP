@@ -29,3 +29,20 @@ let obj2 : {_name : string, _age : number, _adult : boolean} = {
     _age : 33,
     _adult : true
 };
+
+// title, btn
+let title = document.getElementById('title');
+let btn = document.getElementById('btn');
+
+// 버튼 누르면 title의 html내용을 '반갑습니다'로 바꾸기
+if(btn != null) {
+    btn.addEventListener('click',(e)=>{
+        if(title != null) {
+            title.innerHTML = '안녕하세요';
+        }else{
+            console.log("btn이없다")
+        }
+    })
+}
+
+

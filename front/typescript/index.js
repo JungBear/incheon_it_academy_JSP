@@ -26,3 +26,17 @@ var obj2 = {
     _age: 33,
     _adult: true
 };
+// title, btn
+var title = document.getElementById('title');
+var btn = document.getElementById('btn');
+// 버튼 누르면 title의 html내용을 '반갑습니다'로 바꾸기
+if (btn != null) {
+    btn.addEventListener('click', function (e) {
+        if (title != null) {
+            title.innerHTML = '안녕하세요';
+        }
+        else {
+            console.log("btn이없다");
+        }
+    });
+}
