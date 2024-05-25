@@ -11,8 +11,8 @@ let 객체04 :{num? : (number | boolean)[], str? : string, name? : (string | str
     name : "son"
 }
 
-객체04.num[4] = false;
-객체04.name = ["lee", 객체04.str];
+// 객체04.num[4] = false;
+// 객체04.name = ["lee", 객체04.str];
 
 // 2. 타입정하기
 let 사람04 : string = '홍길동';

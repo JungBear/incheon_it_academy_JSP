@@ -9,8 +9,8 @@ var 객체04 = {
     str: "str",
     name: "son"
 };
-객체04.num[4] = false;
-객체04.name = ["lee", 객체04.str];
+// 객체04.num[4] = false;
+// 객체04.name = ["lee", 객체04.str];
 // 2. 타입정하기
 var 사람04 = '홍길동';
 var 나이04 = undefined; // 숫자도 가능해야함

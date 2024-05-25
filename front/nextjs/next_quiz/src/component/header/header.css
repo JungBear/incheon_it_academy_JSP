@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 32px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 36px;
+
+}
