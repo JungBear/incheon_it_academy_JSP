@@ -26,7 +26,7 @@
 		console.log(xhr.readyState + " / " + xhr.status);
 		
 		let data = xhr.responseText; // 최종결과값을 갖고 돌아온다
-		console.log(data);
+		// console.log(data);
 		document.getElementById("disp").innerHTML = data;
 		
 	}
