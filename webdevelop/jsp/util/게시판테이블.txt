@@ -1,0 +1,63 @@
+-- 시퀀스
+CREATE SEQUENCE SEQ_BOARD_IDX;
+
+-- 테이블
+CREATE TABLE BOARD(
+	IDX NUMBER(3) PRIMARY KEY,
+	NAME VARCHAR2(100) NOT NULL,
+	SUBJECT VARCHAR2(255) NOT NULL,
+	CONTENT CLOB,
+	PWD VARCHAR2(100),
+	IP VARCHAR2(100),
+	REGDATE DATE,
+	READHIT NUMBER(3) DEFAULT 0,
+	-- 계층형 게시판을 운영하기 위한 추가 정보
+	REF NUMBER, -- 기준글 번호(답글이 달리는 메인글)
+	STEP NUMBER, -- 댓글 순번(수직적)
+	DEPTH NUMBER -- 답글의 깊이
+);
+
+-- 샘플데이터
+INSERT INTO BOARD VALUES(
+	SEQ_BOARD_IDX.NEXTVAL,
+	'이름-일길동',
+	'제목-내가 일등',
+	'내용-내가 일등이다',
+	'1234',
+	'192.0.0.1',
+	SYSDATE,
+	0,
+	SEQ_BOARD_IDX.CURRVAL,
+	0,
+	0
+);
+
+-- 답글
+INSERT INTO BOARD VALUES(
+	SEQ_BOARD_IDX.NEXTVAL,
+	'이름-이길동',
+	'제목-집에 가고 싶다',
+	'내용-나는 언제 쉬지',
+	'1234',
+	'192.0.0.1',
+	SYSDATE,
+	0,
+	1, -- 메인글의 IDX
+	1, -- STEP
+	1 -- DEPTH
+);
+
+-- 답글의 답글
+INSERT INTO BOARD VALUES(
+	SEQ_BOARD_IDX.NEXTVAL,
+	'이름-이길동',
+	'제목-집에 가고 싶다',
+	'내용-나는 언제 쉬지',
+	'1234',
+	'192.0.0.1',
+	SYSDATE,
+	0,
+	1, -- 메인글의 IDX
+	2, -- STEP
+	2 -- DEPTH
+);

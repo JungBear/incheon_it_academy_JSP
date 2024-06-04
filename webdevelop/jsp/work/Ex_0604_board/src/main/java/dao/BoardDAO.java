@@ -6,43 +6,37 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import service.MyBatisConnector;
-import vo.GogekVO;
+import vo.BoardVO;
 
-public class GogekDAO {
-	
+public class BoardDAO {
+
 	// single-ton pattern: 
 	// 객체1개만생성해서 지속적으로 서비스하자
-	static GogekDAO single = null;
+	static BoardDAO single = null;
 
-	public static GogekDAO getInstance() {
+	public static BoardDAO getInstance() {
 		//생성되지 않았으면 생성
 		if (single == null)
-			single = new GogekDAO();
+			single = new BoardDAO();
 		//생성된 객체정보를 반환
 		return single;
 	}
 	
 	SqlSessionFactory factory;
 	
-	public GogekDAO() {
+	public BoardDAO() {
 		factory = MyBatisConnector.getInstance().getSqlSessionFactory();
 	}
-	
-	public List<GogekVO> select(){
+	// 전체 게시물 조회
+	public List<BoardVO> selectList(){
 		SqlSession sqlSession = factory.openSession();
 		
-		List<GogekVO> list = sqlSession.selectList("gogek.gogek_list");
+		List<BoardVO> list = sqlSession.selectList("board.board_list");
+		
 		sqlSession.close();
+		
 		return list;
 	}
 	
-	public List<GogekVO> select(String addr){
-		SqlSession sqlSession = factory.openSession();
-		
-		List<GogekVO> list = sqlSession.selectList("gogek.gogek_list_addr", addr);
-
-		sqlSession.close();
-		return list;
-	}
-
+	
 }

@@ -3,36 +3,26 @@ package action;
 import java.io.IOException;
 import java.util.List;
 
-import dao.GogekDAO;
+import dao.BoardDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import vo.GogekVO;
+import vo.BoardVO;
 
-@WebServlet("/gogek_list")
-public class GogekListAction extends HttpServlet{
+@WebServlet("/board_list")
+public class BoardListAction extends HttpServlet{
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String addr = request.getParameter("addr");
-		
-		List<GogekVO> list = null;
-//		System.out.println(addr);
-		
-		if(addr == null || addr.isEmpty()) {
-			list = GogekDAO.getInstance().select();
-		}else {
-			list = GogekDAO.getInstance().select(addr);
-		}
+		// 전체 목록 가져오기
+		List<BoardVO> list = BoardDAO.getInstance().selectList();
 		
 		request.setAttribute("list", list);
 		
-		RequestDispatcher disp = request.getRequestDispatcher("gogek_list.jsp");
+		RequestDispatcher disp = request.getRequestDispatcher("board_list.jsp");
 		disp.forward(request, response);
-		
-		
 	}
 }
