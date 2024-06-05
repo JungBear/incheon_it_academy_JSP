@@ -38,5 +38,24 @@ public class BoardDAO {
 		return list;
 	}
 	
+	public int insert(BoardVO vo) {
+		// openSession(true)로 해야 commit을 해준다
+		SqlSession sqlSession = factory.openSession(true);
+//		System.out.println("이름 : " + vo.getName());
+		int rs = sqlSession.insert("board.insert_board", vo);
+//		System.out.println("xml 결과 : " + rs);
+		sqlSession.close();
+		
+		return rs;
+	}
+	
+	public BoardVO selectOne(int idx) {
+		SqlSession sqlSession = factory.openSession();
+		BoardVO vo = sqlSession.selectOne("board.select_board_id",idx);
+		sqlSession.close();
+		
+		return vo;
+	}
+	
 	
 }

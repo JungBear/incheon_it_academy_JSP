@@ -6,6 +6,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  <select id="board_list" resultType="board">
  	SELECT * FROM BOARD ORDER BY REF DESC, STEP ASC
  </select>
+ 
+ <insert id="insert_board" parameterType="board">
+ 	INSERT INTO BOARD VALUES(SEQ_BOARD_IDX.nextVal, 
+ 							 #{name}, 
+ 							 #{subject}, 
+ 							 #{content}, 
+ 							 #{pwd}, 
+ 							 #{ip}, 
+ 							 SYSDATE, 
+ 							 0, 
+ 							 SEQ_BOARD_IDX.CURRVAL, 
+ 							 0, 
+ 							 0)
+ </insert>
+ 
+ <select id="select_board_id" parameterType="int" resultType="board">
+ 	SELECT * FROM BOARD WHERE IDX = #{idx}
+ </select>
 </mapper>
 
 
