@@ -37,7 +37,13 @@
 				<td>
 					<c:forEach begin="1" end="${vo.depth }">&nbsp;</c:forEach>
 					<c:if test="${vo.depth > 0 }">ㄴ</c:if>
-					<a href="view?idx=${vo.idx}"> ${vo.subject }</a>
+					<c:if test="${vo.del_info ne -1 }">
+						<a href="view?idx=${vo.idx}"> ${vo.subject }</a>
+					</c:if>
+					<c:if test="${vo.del_info eq -1 }">
+						 <font color="gray">${vo.subject }</font>
+					</c:if>
+					
 				</td>
 				<td>${vo.name }</td>
 				<td> ${fn:split(vo.regdate,' ')[0]}</td>

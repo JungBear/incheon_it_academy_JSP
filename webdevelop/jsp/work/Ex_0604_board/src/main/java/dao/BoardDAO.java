@@ -57,5 +57,32 @@ public class BoardDAO {
 		return vo;
 	}
 	
+	public int update_readhit(int idx) {
+		SqlSession sqlSession = factory.openSession(true);
+		int rs = sqlSession.update("board.board_readhit", idx);
+		sqlSession.close();
+		return rs;
+	}
+	
+	public int update_step(BoardVO vo) {
+		SqlSession sqlSession = factory.openSession(true);
+		int rs = sqlSession.update("board.update_step", vo);
+		sqlSession.close();
+		return rs;
+	}
+	
+	public int insert_reply(BoardVO vo) {
+		SqlSession sqlSession = factory.openSession(true);
+		int rs = sqlSession.insert("board.insert_reply", vo);
+		sqlSession.close();
+		return rs;
+	}
+	
+	public int del_update(BoardVO vo) {
+		SqlSession sqlSession = factory.openSession(true);
+		int rs = sqlSession.insert("board.del_update", vo);
+		sqlSession.close();
+		return rs;
+	}
 	
 }

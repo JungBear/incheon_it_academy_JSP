@@ -20,6 +20,7 @@ public class BoardInsertAction extends HttpServlet{
         String content = request.getParameter("content");
         String pwd = request.getParameter("pwd");
         String ip = request.getRemoteAddr();
+
         
         BoardVO vo = new BoardVO();
         vo.setSubject(subject);

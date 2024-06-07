@@ -6,6 +6,8 @@ public class BoardVO {
 	private int ref;
 	private int step;
 	private int depth;
+	private int del_info;
+	
 	private String name;
 	private String subject;
 	private String content;
@@ -78,7 +80,12 @@ public class BoardVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
+	public int getDel_info() {
+		return del_info;
+	}
+	public void setDel_info(int del_info) {
+		this.del_info = del_info;
+	}
 	
 
 }

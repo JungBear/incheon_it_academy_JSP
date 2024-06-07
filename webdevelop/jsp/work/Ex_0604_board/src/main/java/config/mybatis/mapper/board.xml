@@ -18,12 +18,52 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  							 0, 
  							 SEQ_BOARD_IDX.CURRVAL, 
  							 0, 
+ 							 0,
  							 0)
  </insert>
  
  <select id="select_board_id" parameterType="int" resultType="board">
  	SELECT * FROM BOARD WHERE IDX = #{idx}
  </select>
+ 
+ <update id="board_readhit" parameterType="int">
+ 	UPDATE BOARD 
+ 	SET READHIT = READHIT + 1
+ 	WHERE IDX = #{idx}
+ </update>
+ 
+ <update id="update_step" parameterType="board">
+ 	UPDATE BOARD
+ 	SET STEP = STEP + 1
+ 	WHERE REF = #{ref} 
+ 	AND   step > #{step}
+ </update>
+ 
+ <insert id="insert_reply" parameterType="board">
+ 	INSERT INTO BOARD VALUES(SEQ_BOARD_IDX.nextVal, 
+				      		 #{name}, 
+							 #{subject}, 
+							 #{content}, 
+							 #{pwd}, 
+							 #{ip}, 
+							 SYSDATE, 
+							 0, 
+							 #{ref}, 
+							 #{step}, 
+							 #{depth},
+							 0)
+ </insert>	
+ 
+ <update id="del_update" parameterType="board">
+ 	UPDATE BOARD SET
+ 		SUBJECT = #{subject},
+ 		NAME = #{name},
+ 		DEL_INFO = -1
+ 	WHERE 
+ 		IDX = #{idx}
+ </update>
+ 
+ 
 </mapper>
 
 
