@@ -63,6 +63,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		IDX = #{idx}
  </update>
  
+ <!-- select * from (select rank() over (order by ref desc, step) no, b.* from board b) where no between 1 and 10 -->
  
 </mapper>
 
