@@ -3,8 +3,8 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
- <select id="board_list" resultType="board">
- 	SELECT * FROM BOARD ORDER BY REF DESC, STEP ASC
+ <select id="board_list" parameterType="java.util.HashMap" resultType="board">
+ 	select * from (select rank() over (order by ref desc, step) no, b.* from board b) where no between #{start} and #{end}
  </select>
  
  <insert id="insert_board" parameterType="board">
@@ -62,6 +62,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	WHERE 
  		IDX = #{idx}
  </update>
+ 
+ <select id="get_row_total" resultType="int">
+ 	SELECT COUNT(*) FROM BOARD	 
+ </select>
  
  <!-- select * from (select rank() over (order by ref desc, step) no, b.* from board b) where no between 1 and 10 -->
  

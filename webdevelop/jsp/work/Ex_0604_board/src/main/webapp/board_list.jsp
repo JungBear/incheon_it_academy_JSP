@@ -52,7 +52,7 @@
 		</c:forEach>
 		
 		<tr>
-			<td colspan="5" align="center"> <- 1 2 3 -> </td>
+			<td colspan="5" align="center"> ${pageMenu}</td>
 		</tr>
 		
 		<tr>
