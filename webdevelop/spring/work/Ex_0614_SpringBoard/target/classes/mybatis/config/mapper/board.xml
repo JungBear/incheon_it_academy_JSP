@@ -2,9 +2,42 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
-
+<mapper namespace="board">
+	<select id="board_total"  resultType="int">
+		select count(*) from board
+	</select>
+	
+	<select id="board_list" parameterType="java.util.HashMap" resultType="vo.BoardVO">
+		select * 
+		from (select rank() over(order by ref desc,step) no, b.* from board b)
+		where no between #{start} and #{end}
+	</select>
+	
+	<select id="board_select" parameterType="int" resultType="vo.BoardVO">
+		select * from board where idx = #{idx}
+	</select>
+	
+	<update id="update_readhit" parameterType="int">
+		update board 
+		set readhit = readhit + 1
+		where idx = #{idx}
+	</update>
   
+  	<insert id="board_insert" parameterType="vo.BoardVO">
+  		insert into board values(seq_board_idx.nextVal,
+  								 #{name},
+  								 #{subject},
+  								 #{content},
+  								 #{pwd},
+  								 #{ip},
+  								 sysdate,
+  								 0,
+  								 seq_board_idx.currVal,
+  								 0,
+  								 0,
+  								 0
+  		)
+  	</insert>
 
 </mapper>
 

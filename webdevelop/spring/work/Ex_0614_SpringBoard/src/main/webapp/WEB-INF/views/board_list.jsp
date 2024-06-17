@@ -20,7 +20,7 @@
 <body>
 	<table border="1" width="700" align="center">
 		<tr>
-			<td colspan="5"><img src="img/title_04.gif"></td>
+			<td colspan="5"><img src="resources/img/title_04.gif"></td>
 		</tr>
 		
 		<tr>
@@ -38,7 +38,7 @@
 					<c:forEach begin="1" end="${vo.depth }">&nbsp;</c:forEach>
 					<c:if test="${vo.depth > 0 }">ㄴ</c:if>
 					<c:if test="${vo.del_info ne -1 }">
-						<a href="view?idx=${vo.idx}"> ${vo.subject }</a>
+						<a href="view?idx=${vo.idx}&page=${param.page}"> ${vo.subject }</a>
 					</c:if>
 					<c:if test="${vo.del_info eq -1 }">
 						 <font color="gray">${vo.subject }</font>
@@ -57,7 +57,7 @@
 		
 		<tr>
 			<td colspan="5" align="right">
-				<img src="img/btn_reg.gif" onclick="location.href='insert_form.jsp'" style="cursor:pointer">
+				<img src="resources/img/btn_reg.gif" onclick="location.href='insert_form?page=${param.page}'" style="cursor:pointer">
 		</tr>
 	</table>
 </body>

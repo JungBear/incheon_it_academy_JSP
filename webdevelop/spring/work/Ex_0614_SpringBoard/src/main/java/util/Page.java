@@ -38,9 +38,9 @@ public class Page {
 			sb.append("<a href ='"+pageURL+"?page=");
 			//sb.append(nowPage - blockPage);
 			sb.append( startPage-1 );
-			sb.append("'><img src='img/btn_prev.gif'></a>");
+			sb.append("'><img src='resources/img/btn_prev.gif'></a>");
 		}
-		else sb.append("<img src='img/btn_prev.gif'>");
+		else sb.append("<img src='resources/img/btn_prev.gif'>");
 		
 		
 		//------페이지 목록 출력 -------------------------------------------------------------------------------------------------
@@ -72,9 +72,9 @@ public class Page {
 			else
 				nowPage = nowPage+blockPage;
 			sb.append(nowPage);*/
-			sb.append("'><img src='img/btn_next.gif'></a>");
+			sb.append("'><img src='resources/img/btn_next.gif'></a>");
 		}
-		else sb.append("<img src='img/btn_next.gif'>");
+		else sb.append("<img src='resources/img/btn_next.gif'>");
 		//---------------------------------------------------------------------------------------------------------------------	    
 
 		return sb.toString();
