@@ -20,6 +20,20 @@
 <body>
 	<table border="1" width="700" align="center">
 		<tr>
+			<td colspan="5" align="right">
+				<c:choose>
+					<c:when test="${empty id}">
+						<input type="button" value="로그인" onclick="location.href='login_form'">
+						<input type="button" value="회원가입" onclick="location.href='register_form'">	
+					</c:when>
+					<c:when test="${not empty id}">
+						<input type="button" value="로그아웃" onclick="location.href='logout'">
+					</c:when>
+				</c:choose>
+			</td>
+		</tr>	
+					
+		<tr>
 			<td colspan="5"><img src="resources/img/title_04.gif"></td>
 		</tr>
 		

@@ -2,7 +2,13 @@ package util;
 
 public class Common {
 	
+	public static final String BOARD_PATH = "/board/";
+	public static final String MEMBER_PATH = "/member/";
+	
 	public static class Board{
+		
+
+		
 		// 한 페이지에 보여줄 게시물 수
 		public final static int BLOCKLIST = 10;
 		

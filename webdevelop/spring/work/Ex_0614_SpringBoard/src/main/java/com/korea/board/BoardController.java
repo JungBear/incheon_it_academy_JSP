@@ -11,9 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import dao.BoardDAO;
 import lombok.RequiredArgsConstructor;
+import util.Common;
 import util.Common.Board;
 import util.Page;
 import vo.BoardVO;
@@ -26,6 +29,9 @@ public class BoardController {
 	
 	@Autowired
 	HttpServletRequest request;
+	
+	@Autowired
+	HttpSession session;
 	
 	@RequestMapping(value = {"/","/board_list"})
 	public String boardList(String page, Model model) {
@@ -56,7 +62,7 @@ public class BoardController {
 		model.addAttribute("pageMenu", pageMenu);
 		model.addAttribute("list", list);
 		
-		return "board_list.jsp?page=" + nowPage;
+		return Common.BOARD_PATH +  "board_list.jsp?page=" + nowPage;
 	}
 	
 	@RequestMapping("/view")
@@ -74,12 +80,16 @@ public class BoardController {
 		
 		model.addAttribute("vo", vo);
 		
-		return "board_view.jsp?page=" + page;
+		return Common.BOARD_PATH + "board_view.jsp?page=" + page;
 	}
 	
 	@RequestMapping("insert_form")
 	public String insert_form(@RequestParam(required = false, defaultValue = "1") String page) {
-		return "insert_form.jsp?page=" + page;
+		if(session.getAttribute("id") == null) {
+			return Common.MEMBER_PATH + "login_form.jsp";
+		}	
+		return Common.BOARD_PATH + "insert_form.jsp?page=" + page;
+		
 	}
 	
 	@RequestMapping("insert.do")
@@ -92,4 +102,51 @@ public class BoardController {
 				return null;
 			}
 	}
+	
+	@RequestMapping("del")
+	@ResponseBody
+	public HashMap<String, String> delect(int idx){
+		BoardVO baseVO = boardDAO.selectPost(idx);
+		baseVO.setSubject("이미 삭제된 글입니다.");
+		baseVO.setName("unknown");
+		
+		int rs = boardDAO.del_update(baseVO);
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		if(rs == 1) {
+			map.put("param", "yes");
+			return map;
+		} else {
+			map.put("param", "no");
+			return map;
+		}
+	}
+	
+	@RequestMapping("reply_form")
+	public String sendReplyForm(int idx, int page) {
+		return Common.BOARD_PATH + "reply_form.jsp?idx=" + idx + "&page=" + page ;
+	}
+	
+	@RequestMapping("reply")
+	public String reply(int idx, int page, BoardVO vo) {
+		
+		BoardVO baseVO = boardDAO.selectPost(idx);
+		int rs = boardDAO.updateReplyStep(baseVO);
+		
+		vo.setIp(request.getRemoteAddr());
+		vo.setStep(baseVO.getStep() + 1);
+		vo.setDepth(baseVO.getDepth() + 1);
+		vo.setRef(baseVO.getRef());
+		
+		rs = boardDAO.insertReply(vo);
+		
+		
+		
+		if(rs > 0) {
+			return "redirect:board_list?page=" + page;
+		}else {
+			return null;
+		}
+	}
+	
 }

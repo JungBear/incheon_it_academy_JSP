@@ -37,4 +37,16 @@ public class BoardDAO {
 		return sqlSession.insert("board.board_insert", vo);
 	}
 	
+	public int del_update(BoardVO vo) {
+		return sqlSession.update("board.del_update", vo);
+	}
+	
+	public int insertReply(BoardVO vo) {
+		return sqlSession.insert("board.reply_insert",vo);
+	}
+	
+	public int updateReplyStep(BoardVO vo) {
+		return sqlSession.update("board.update_reply_step", vo);
+	}
+	
 }

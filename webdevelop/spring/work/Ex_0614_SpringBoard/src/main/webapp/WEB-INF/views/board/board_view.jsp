@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function reply(){
-		location.href="reply_form.jsp?idx=${vo.idx}";
+		location.href="reply_form?idx=${vo.idx}&page=${param.page}";
 	}
 	
 	//목적지 : del
@@ -33,7 +33,7 @@
 		.then(data =>{
 			if(data.param === 'yes'){
 				alert('삭제 성공')
-				location.href="board_list"
+				location.href="board_list?page=${param.page}"
 			} else{
 				alert("삭제 실패")
 			}
