@@ -73,15 +73,15 @@
 		fetch(url, {
 			method : 'post',
 			headers : {'Content-Type' : 'application/x-www-form-urlencoded'},
-			body : bodyform
+			body : bodyForm
 		})
 		.then(res => res.json())
 		.then(data => {
 			if(data.param == 'exist'){
-				alert("사용 가능한 아이디입니다.");
-				b_idCheck = true;
+				alert("이미 사용중인 아이디입니다.");
 			}else if(data.param == 'noexist'){
-				alert("이미 사용중인 아이디입니다");
+				alert("사용가능한 아이디입니다.");
+				b_idCheck = true;
 			}
 		})
 	}
