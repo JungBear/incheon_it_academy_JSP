@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- @{} -->
+	
+	<a href="ex01" th:href="@{/ex01}">ex01로 이동</a><br>
+	<a th:href="@{/result(name=${param.name}, age=${param.age})}">결과</a><br>
+	<a th:href="@{/board/{bno}/read(bno=${param.bno})}">책찾기</a><br>
+</body>
+</html>

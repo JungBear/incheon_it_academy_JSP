@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p th:text="${#numbers.formatInteger(15,3)}"></p> <!-- 앞의 숫자를 뒤의 자리수까지 쓰겠다  -->
+	<p th:text="${#numbers.formatInteger(1000000,3, 'POINT')}"></p> <!-- 앞의 숫자를 뒤의 자리수까지 point를 찍겠다  -->
+	<p th:text="${#numbers.formatCurrency(1000000)}"></p> <!-- 숫자를 통화 포맷으로 바꾸겠다  -->
+	<p th:text="${#numbers.formatPercent(0.05,1,1)}"></p> <!-- 숫자를 퍼센트로 바꾸겠다  -->
+	
+	<p th:text="${#strings.indexOf('kimmaldong','mal')}"></p> <!-- 인덱스를 반환 -->
+	<p th:text="${#strings.substring('kimmaldong',3, 5)}"></p> <!-- 앞숫자부터 뒷숫자만 출력 -->
+	<p th:text="${#strings.length('kimmaldong')}"></p> <!-- 글자수 -->
+	<p th:text="${#strings.trim('kimmaldong     ')}"></p> <!-- 앞뒤의 띄어쓰기 제거 -->
+	
+	<p th:text="${#arrays.length(arr)}"></p>
+	<p th:text="${#arrays.isEmpty(arr)}"></p>
+	<p th:text="${#arrays.contains(arr,3)}"></p>
+	
+</body>
+</html>

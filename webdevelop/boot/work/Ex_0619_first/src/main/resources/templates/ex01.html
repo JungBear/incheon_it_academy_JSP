@@ -8,6 +8,15 @@
 	
 	<!--  -->
 	<div th:text = "${lastName}"></div>
+	<!-- 문자열 결합과 리터럴 치환 -->
+	<span th:text="'My name is ' + ${lastName} + ',' + ${firstName}"></span><br>
+	<span th:text="|My name is ${lastName}, ${firstName}|"></span>
+
+
+	<span th:text="|My name is ${lastName}, ${firstName}|"></span>
+<!-- 	<span th:utext=""$"></span> -->
+	
+	
 	
 </body>
 </html>

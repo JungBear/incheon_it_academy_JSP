@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="result" th:object="${user}" method="post">
+		이름 : <input th:field="*{name}"><br>
+		나이 : <input th:field="*{age}"><br>
+		<input type="submit" value="제출">
+	</form>
+</body>
+</html>

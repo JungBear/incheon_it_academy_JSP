@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<select multiple="multiple">
+		<option th:each="opt:${list}" th:value="${opt}">[[${opt}]] 
+	</select>
+	
+	<hr>
+	<th:block th:each="opt:${list}">
+		<input type="checkbox" th:value="#{opt}">[[${opt}]]<br>
+	</th:block>
+	
+	<hr>
+	
+	<li th:each="pageButton : ${#numbers.sequence(firstPage, lastPage)}">[[${pageButton}]]</li>
+	
+	<!-- status 변수 -->
+	
+	<select multiple> 
+		<option th:each="opt,status:${list}" th:value="${opt}">
+			[[${status.index}]]/[[${opt}]]
+		</option>
+	</select>
+	
+	<select multiple> 
+		<option th:each="opt:${list}" th:value="${opt}">
+			[[${optStat.index}]]/[[${opt}]]
+		</option>
+	</select>
+</body>
+</html>
