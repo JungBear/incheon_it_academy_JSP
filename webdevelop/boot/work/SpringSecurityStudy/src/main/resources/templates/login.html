@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/loginProc" method="post" name="loginForm">
+        <input id="username" type="text" name="username" placeholder="id"/>
+        <input id="password" type="password" name="password" placeholder="password"/>
+
+        <!--csrf enable을 위해 token을 받아서 서버측으로 다시 전송하는 요소가 필요함-->
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+        <input type="submit" value="login"/>
+    </form>
+    
+    <div th:if="${param.error}">
+        <p style="color:red;">아이디나 비밀번호가 올바르지 않습니다.</p>
+    </div>
+     <div th:if="${param.logout}">
+         <p style="color:green;">로그아웃되었습니다</p>
+     </div>
+
+
+</body>
+</html>

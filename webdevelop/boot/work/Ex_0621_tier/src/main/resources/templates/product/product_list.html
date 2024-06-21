@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1" align="center">
+		<tr>
+			<th>상품 번호</th>
+			<th>상품 이름</th>
+			<th>상품 재고</th>
+			<th>상품 가격</th>
+			<th>등록 날짜</th>
+			<th>수정 날짜</th>
+		</tr>
+		
+		<tr th:each="opt:${list}">
+			<td th:text="${opt.productId}"/>
+			<td th:text="${opt.productName}"/>
+			<td th:text="${opt.productStock}"/>
+			<td th:text="${opt.productPrice}"/>
+			<td th:text="${opt.registerDate}"/>
+			<td th:text="${opt.updateDate}"/>
+		</tr>
+	</table>
+	
+	
+</body>
+</html>
