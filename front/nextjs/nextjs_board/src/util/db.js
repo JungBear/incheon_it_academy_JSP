@@ -1,5 +1,6 @@
 import { MongoClient } from 'mongodb'
-const url = 'mongodb+srv://admin:admin@cluster0.0t9wkx9.mongodb.net/?retryWrites=true&w=majority';
+// const url = 'mongodb+srv://admin:admin@cluster0.0t9wkx9.mongodb.net/?retryWrites=true&w=majority';
+const url = "mongodb+srv://admin:admin@cluster0.lh0lafl.mongodb.net/";
 const options = {};
 let connectDB;
 

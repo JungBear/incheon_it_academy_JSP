@@ -1,3 +1,8 @@
+// 'use client' : 클라이언트 컴포넌트
+// 'use server' : 서버 컴포넌트(기본값)
+
+// 서버 컴포넌트에선 form태그로 데이터를 전송(새로고침)
+// 클라이언트 컴포넌트에선 fetch함수로 데이터를 전송(즉각반영)
 export default function Register(){
     return(
         <div>

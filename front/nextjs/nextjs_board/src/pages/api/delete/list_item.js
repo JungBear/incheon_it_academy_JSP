@@ -15,7 +15,7 @@ export default async function listItemHandler(req, res)
             const {id, email} = req.body;
             const sessionEmail = session?.user?.email;
             
-            if(sessionEmail === email || sessionEmail === 'myadminaccount@admin.com'){
+            if(sessionEmail === email || sessionEmail === 'admin@admin.com'){
                 const db = (await connectDB).db('mydb');
                 let result = await db.collection('post').deleteOne(
                     {
