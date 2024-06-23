@@ -1,24 +1,35 @@
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth"
+
 export default async function Write(){
 
+    let session = await getServerSession(authOptions);
+    console.log(session);
     
+    if(session){
+        return(
+            <div className="p-20">
+                <h4>글작성</h4>
+                <form action="/api/post/new" method="POST">
+                    <input name="title" placeholder="글제목"/>
+                    <input name="content" placeholder="글내용"/>
+                    <button type="submit">ACTION에 해당하는 URL에 POST요청</button>
+                </form>
     
-    return(
-        <div>
-            <h4>글 작성 페이지</h4>
-            
-            {/* /api/test에 POST요청 */}
-            <form action="/api/post/new" method="POST">
-                <input name="title" placeholder="제목을 입력하세요"/>
                 <br/>
-                <input name="content" placeholder="내용을 입력하세요"/>
-                <br/>
-                <button type="submit">POST요청 버튼</button>
-            </form>
+                <form action="/api/test" method="GET">
+                    <button type="submit">ACTION에 해당하는 URL에 GET요청</button>
+                </form>
+            </div>
+        )
+    }else{
+        return(
+            <div>로그인이 필요해요</div>
+        )
+    }
 
-            {/* /api/test에 get요청 */}
-            <form action="/api/test" method="GET">
-                <button type="submit">GET요청 버튼</button>
-            </form>
-        </div>
-    )
 }
+
+// title과 content 입력하게하고 DB추가
+// 전송버튼 누르면 서버에 글을 보내고
+// 서버는 DB에 저장한다
