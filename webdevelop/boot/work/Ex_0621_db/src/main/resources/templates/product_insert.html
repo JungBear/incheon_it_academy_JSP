@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<form th:action="@{/register}" th:object="${productVO}" method="post">
+	<form th:action="@{product/register}" th:object="${productVO}" method="POST">
 		<div>
 			<input th:field="*{productName}" placeholder="상품 이름">
 		</div>

@@ -7,6 +7,13 @@
 	</insert>
 	
 	<select id="selectAll">
-		select * from product
+		select * from product order by product_id asc
 	</select>
+	
+	<update id="updateStock">
+		update product
+		set 
+			product_stock = product_stock - #{productCount}
+		where product_id = #{productId}
+	</update>
 </mapper>

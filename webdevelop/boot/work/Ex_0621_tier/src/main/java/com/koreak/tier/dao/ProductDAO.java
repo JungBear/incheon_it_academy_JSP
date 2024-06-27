@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.koreak.tier.mapper.ProductMapper;
+import com.koreak.tier.vo.OrderVO;
 import com.koreak.tier.vo.ProductVO;
 
 @Repository
@@ -21,6 +22,11 @@ public class ProductDAO {
 	
 	public List<ProductVO> findAll(){
 		return productMapper.selectAll();
+	}
+	
+	// 재고 업데이트
+	public void updateStock(OrderVO orderVO) {
+		productMapper.updateStock(orderVO);
 	}
 	
 	
