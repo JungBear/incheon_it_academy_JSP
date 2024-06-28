@@ -1,13 +1,13 @@
-package com.koreak.tier.dao;
+package com.korea.rest.dao;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.koreak.tier.dto.OrderDTO;
-import com.koreak.tier.mapper.OrderMapper;
-import com.koreak.tier.vo.OrderVO;
+import com.korea.rest.dto.OrderDTO;
+import com.korea.rest.mapper.OrderMapper;
+import com.korea.rest.vo.OrderVO;
 
 @Repository
 public class OrderDAO {

@@ -1,13 +1,13 @@
-package com.koreak.tier.service;
+package com.korea.rest.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.koreak.tier.dao.OrderDAO;
-import com.koreak.tier.dao.ProductDAO;
-import com.koreak.tier.dto.OrderDTO;
-import com.koreak.tier.vo.OrderVO;
+import com.korea.rest.dao.OrderDAO;
+import com.korea.rest.dao.ProductDAO;
+import com.korea.rest.dto.OrderDTO;
+import com.korea.rest.vo.OrderVO;
 
 import lombok.RequiredArgsConstructor;
 

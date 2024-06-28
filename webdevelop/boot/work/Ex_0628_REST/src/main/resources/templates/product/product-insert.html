@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{register}" th:object="${vo}" method="post">
+		<div>
+			<input th:field="*{productName}" placeholder="상품 이름">
+		</div>
+		
+		<div>
+			<input th:field="*{productStock}" placeholder="상품 재고">
+		</div>
+		
+		<div>
+			<input th:field="*{productPrice}" placeholder="상품 가격">
+		</div>
+		
+		<input type="submit" value="등록">
+	</form>
+
+</body>
+</html>

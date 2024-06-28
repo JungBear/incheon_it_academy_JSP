@@ -1,4 +1,4 @@
-package com.koreak.tier.dto;
+package com.korea.rest.dto;
 
 import lombok.Data;
 
