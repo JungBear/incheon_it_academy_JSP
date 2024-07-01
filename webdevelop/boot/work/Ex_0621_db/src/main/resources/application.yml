@@ -5,8 +5,8 @@ server:
 spring:
   datasource:
     hikari:
-      driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
-      username : test_pm
-      password : 1111
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/project?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      username : my_user
+      password : 1234
 
